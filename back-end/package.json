@@ -8,6 +8,9 @@
     "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "_moduleAliases": {
+    "@src"      : "src/"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -15,6 +18,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.4",
+    "module-alias": "^2.2.2",
     "node-sass": "^8.0.0",
     "uuid": "^9.0.0"
   },
