@@ -1,11 +1,13 @@
 class BillOfLadingsController {
-
-    //[GET] bill-of-ladings
-    index(req,res){
+    getBillOfLadings(req,res){
         res.render("bill-of-lading");
     }
-    detail(req,res){
-        res.send("bill-of-lading-detail")
+    getBillOfLadingsByID(req,res){
+        res.render("bill-of-lading");
     }
+    createBillOfLadings(req,res){
+        res.render("bill-of-lading");
+    }
+    
 }
 module.exports = new BillOfLadingsController;

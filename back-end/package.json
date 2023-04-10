@@ -9,12 +9,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "_moduleAliases": {
-    "@src"      : "src/"
+    "@src": "src/"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.1348.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.4",
