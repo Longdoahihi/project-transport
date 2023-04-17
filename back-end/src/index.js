@@ -22,15 +22,8 @@ app.engine('hbs', engine({
 }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
-
-
-// app.get('/api/book',(req,res)=>{
-//     res.json({
-//         name: "Sách giáo khoa"
-//     })
-// })
 //config routes
 route(app);
 
 
-app.listen(3000);
+app.listen(8888);
