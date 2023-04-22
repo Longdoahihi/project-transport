@@ -8,20 +8,15 @@ import {
     Button,
     Card,
     CardTitle,
-    Input,
-    Media,
     Container,
     Row,
     Col,
-    UncontrolledTooltip,
     Nav,
     NavItem,
     NavLink,
     TabContent,
     TabPane,
-    CustomInput,
     CardBody,
-    CardFooter
 } from "reactstrap";
 import Select from 'react-select'
 
