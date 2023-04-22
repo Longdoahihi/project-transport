@@ -33,7 +33,7 @@ function HomeHeader() {
         <div className="content-center">
           <Row>
             <Col className="ml-auto mr-auto text-center" md="10">
-              <div class="card rounded flex justify-content-between form-lookup" style={{
+              <div class="card rounded flex justify-content-between form-lookup content-center" style={{
                 backgroundColor: 'rgba(0,0,0,0.5)'
               }}>
                 <form className="form-lookup form-control-success">
@@ -59,9 +59,13 @@ function HomeHeader() {
                     </div>
                   </div>
                 </form>
-                <button class="btn btn-success btn-lg btn-round my-0" type="button">
-                  <i class="now-ui-icons ui-1_zoom-bold "  ></i> Tra cứu
-                </button>
+                <Row className="btn-search">
+                  <Col md={12} className="">
+                    <button class="btn btn-success btn-lg btn-round my-0 pull-center" type="button">
+                      <i class="now-ui-icons ui-1_zoom-bold "  ></i> Tra cứu
+                    </button>
+                  </Col>
+                </Row>
               </div>
             </Col>
           </Row>

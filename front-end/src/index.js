@@ -46,12 +46,16 @@ import HomePage from "pages/HomePage";
 // others
 import './assets/css/pages/app.css'
 import IntroPage from "pages/IntroPage";
+import NewsPage from "pages/NewsPage";
+import ContactPage from "pages/ContactPage";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
     <Switch>
 
+      <Route path="/contact" render={(props) => <ContactPage {...props} />} />
+      <Route path="/news" render={(props) => <NewsPage {...props} />} />
       <Route path="/introduction" render={(props) => <IntroPage {...props} />} />
       <Route path="/about-us" render={(props) => <AboutUs {...props} />} />
       <Route path="/blog-post" render={(props) => <BlogPost {...props} />} />

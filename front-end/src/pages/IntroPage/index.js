@@ -210,66 +210,47 @@ function IntroPage() {
                         </Card>
                     </Container>
                 </div>
-                    <Container className="container-fluid">
-                        <Row className="justify-content-center">
-                            <Col lg="8" md="12">
-                                <Carousel
-                                    activeIndex={activeIndex}
-                                    next={next}
-                                    previous={previous}
-                                >
-                                    <CarouselIndicators
-                                        items={items}
-                                        activeIndex={activeIndex}
-                                        onClickHandler={goToIndex}
-                                    />
-                                    {items.map((item) => {
-                                        return (
-                                            <CarouselItem
-                                                onExiting={onExiting}
-                                                onExited={onExited}
-                                                key={item.src}
-                                            >
-                                                <img
-                                                    src={item.src}
-                                                    alt={item.altText}
-                                                    className="d-block"
-                                                />
-                                                <div className="carousel-caption d-none d-md-block">
-                                                    <h5>{item.caption}</h5>
-                                                </div>
-                                            </CarouselItem>
-                                        );
-                                    })}
-                                    <a
-                                        className="carousel-control-prev"
-                                        data-slide="prev"
-                                        href="#pablo"
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            previous();
-                                        }}
-                                        role="button"
-                                    >
-                                        <i className="now-ui-icons arrows-1_minimal-left"></i>
-                                    </a>
-                                    <a
-                                        className="carousel-control-next"
-                                        data-slide="next"
-                                        href="#pablo"
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            next();
-                                        }}
-                                        role="button"
-                                    >
-                                        <i className="now-ui-icons arrows-1_minimal-right"></i>
-                                    </a>
-                                </Carousel>
-                            </Col>
-                        </Row>
-                    </Container>
-                <FooterBlack />
+                <Container>
+                    <Card className="card-no-shadow">
+                        <CardTitle className="text-center">
+                            <h4 className="font-weight-bold mb-0 text-uppercase" >Hình ảnh về công ty</h4>
+                            <h5>TỔNG CÔNG TY CỔ PHẦN BƯU CHÍNH VIETTEL</h5>
+                        </CardTitle>
+                        <CardBody>
+                            <Row>
+                                <Col md={3}>
+                                    <img
+                                        alt="..."
+                                        className="rounded-circle"
+                                        src={require("assets/img/julie.jpg")}
+                                    ></img>
+                                </Col>
+                                <Col md={3}>
+                                    <img
+                                        alt="..."
+                                        className="rounded-circle"
+                                        src={require("assets/img/julie.jpg")}
+                                    ></img>
+                                </Col>
+                                <Col md={3}>
+                                    <img
+                                        alt="..."
+                                        className="rounded-circle"
+                                        src={require("assets/img/julie.jpg")}
+                                    ></img>
+                                </Col>
+                                <Col md={3}>
+                                    <img
+                                        alt="..."
+                                        className="rounded-circle"
+                                        src={require("assets/img/julie.jpg")}
+                                    ></img>
+                                </Col>
+                            </Row>
+                            <p className="text-center">Viettel Post là một đơn vị thành viên của Tập đoàn Công nghiệp Viễn thông Quân đội Viettel chuyên kinh doanh các dịch vụ Chuyển phát nhanh trong nước và quốc tế; Dịch vụ Logistics; Dịch vụ Fulfillment; Dịch vụ Thương mại;...</p>
+                        </CardBody>
+                    </Card>
+                </Container>
             </div>
         </>
     );

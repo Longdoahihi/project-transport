@@ -31,7 +31,7 @@ function InputCustom({
                     type={type ?? "text"}
                     style={{
                         padding: '8px 8px',
-                        border: '1px solid rgba(1,1,1,0.2)',
+                        border: '1px solid rgba(1,1,1,0.12)',
                         width: '100%'
                     }}
 

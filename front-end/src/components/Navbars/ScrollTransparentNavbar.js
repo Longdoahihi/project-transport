@@ -18,32 +18,32 @@ import {
   UncontrolledCollapse,
 } from "reactstrap";
 
-function ScrollTransparentNavbar() {
+function ScrollTransparentNavbar({ isOpenNavbar = false }) {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [navbarColor, setNavbarColor] = React.useState(
-    (document.documentElement.scrollTop > 499 || document.body.scrollTop) > 499
+    ((document.documentElement.scrollTop > 499 || document.body.scrollTop) > 499) || isOpenNavbar
       ? ""
       : " navbar-transparent"
   );
-  const [buyButtonColor, setBuyButtonColor] = React.useState(
-    (document.documentElement.scrollTop > 499 || document.body.scrollTop) > 499
-      ? "info"
-      : "neutral"
-  );
+  // const [buyButtonColor, setBuyButtonColor] = React.useState(
+  //   (document.documentElement.scrollTop > 499 || document.body.scrollTop) > 499
+  //     ? "info"
+  //     : "neutral"
+  // );
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
         document.documentElement.scrollTop > 499 ||
-        document.body.scrollTop > 499
+        document.body.scrollTop > 499 || isOpenNavbar
       ) {
         setNavbarColor("");
-        setBuyButtonColor("info");
+        // setBuyButtonColor("info");
       } else if (
         document.documentElement.scrollTop < 500 ||
         document.body.scrollTop < 500
       ) {
         setNavbarColor(" navbar-transparent");
-        setBuyButtonColor("neutral");
+        // setBuyButtonColor("neutral");
       }
     };
     window.addEventListener("scroll", updateNavbarColor);
@@ -66,8 +66,7 @@ function ScrollTransparentNavbar() {
         <Container>
           <div className="navbar-translate">
             <NavbarBrand
-              href="#pablo"
-              onClick={(e) => e.preventDefault()}
+              href="/"
             >
               Mien Bac Transport
             </NavbarBrand>
@@ -88,6 +87,13 @@ function ScrollTransparentNavbar() {
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink
+                  href="/news"
+                >
+                  <p>Tin tức</p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
                   href="/introduction"
                 >
                   <p>Giới thiệu</p>
@@ -95,12 +101,12 @@ function ScrollTransparentNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
+                  href="/contact"
                 >
-                  <p>Tin tức</p>
+                  <p>Liên hệ</p>
                 </NavLink>
               </NavItem>
+
               <NavItem>
                 <NavLink
                   href="/login-page"

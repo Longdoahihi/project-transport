@@ -88,120 +88,130 @@ function HomePage() {
                                 className="tab-space"
                                 activeTab={"iconHorizontalTabs" + iconHorizontalTabs}
                             >
-                                <TabPane tabId="iconHorizontalTabs1">
-                                    <div className="col-6">
-                                        <form>
-                                            <div className="form-group row">
-                                                <label htmlFor="staticEmail require" className="col-md-3 col-form-label">Gửi từ</label>
-                                                <div className=" col-md-9">
-                                                    <Select
-                                                        className="react-select react-select-info mt-2 rounded-0"
-                                                        onChange={(value) => { }}
-                                                        classNamePrefix="react-select"
-                                                        placeholder="Single Select"
-                                                        value={{ label: "", value: "" }}
-                                                        name=""
-                                                        onInputChange={(e) => { console.log(e) }}
-                                                        options={[
-                                                            {
-                                                                value: "",
-                                                                label: "Single Option",
-                                                                isDisabled: true,
-                                                            },
-                                                            { value: "2", label: "Foobar" },
-                                                            { value: "3", label: "Is great" },
-                                                        ]}
-                                                    ></Select>
-                                                </div>
-                                            </div>
-                                            <div className="form-group row">
-                                                <label htmlFor="staticEmail require" className="col-md-3 col-form-label">Quận, huyện</label>
-                                                <div className=" col-md-9">
-                                                    <Select
-                                                        className="react-select react-select-info mt-2 rounded-0"
-                                                        onChange={(value) => { }}
-                                                        classNamePrefix="react-select"
-                                                        placeholder="Single Select"
-                                                        value={{ label: "", value: "" }}
-                                                        name=""
-                                                        onInputChange={(e) => { console.log(e) }}
-                                                        options={[
-                                                            {
-                                                                value: "",
-                                                                label: "Single Option",
-                                                                isDisabled: true,
-                                                            },
-                                                            { value: "2", label: "Foobar" },
-                                                            { value: "3", label: "Is great" },
-                                                        ]}
-                                                    ></Select>
-                                                </div>
-                                            </div>
-                                            <div className="form-group row">
-                                                <label htmlFor="staticEmail require" className="col-md-3 col-form-label">Giao đến</label>
-                                                <div className=" col-md-9">
-                                                    <Select
-                                                        className="react-select react-select-info mt-2 rounded-0"
-                                                        onChange={(value) => { }}
-                                                        classNamePrefix="react-select"
-                                                        placeholder="Single Select"
-                                                        value={{ label: "", value: "" }}
-                                                        name=""
-                                                        onInputChange={(e) => { console.log(e) }}
-                                                        options={[
-                                                            {
-                                                                value: "",
-                                                                label: "Single Option",
-                                                                isDisabled: true,
-                                                            },
-                                                            { value: "2", label: "Foobar" },
-                                                            { value: "3", label: "Is great" },
-                                                        ]}
-                                                    ></Select>
-                                                </div>
-                                            </div>
-                                            <div className="form-group row">
-                                                <label htmlFor="staticEmail require" className="col-md-3 col-form-label">Quận huyện</label>
-                                                <div className=" col-md-9">
-                                                    <Select
-                                                        className="react-select react-select-info mt-2 rounded-0"
-                                                        onChange={(value) => { }}
-                                                        classNamePrefix="react-select"
-                                                        placeholder="Single Select"
-                                                        value={{ label: "", value: "" }}
-                                                        name=""
-                                                        onInputChange={(e) => { console.log(e) }}
-                                                        options={[
-                                                            {
-                                                                value: "",
-                                                                label: "Single Option",
-                                                                isDisabled: true,
-                                                            },
-                                                            { value: "2", label: "Foobar" },
-                                                            { value: "3", label: "Is great" },
-                                                        ]}
-                                                    ></Select>
-                                                </div>
-                                            </div>
-                                            <InputCustom
-                                                title="Trọng lượng"
-                                                type="number"
-                                                wrapInputClassName={"col-md-9"}
-                                                labelClassName={"col-md-3"}
-                                            />
-                                            <InputCustom
-                                                title="Số tiền thu hộ"
-                                                type="number"
-                                                wrapInputClassName={"col-md-9"}
-                                                labelClassName={"col-md-3"}
-                                            />
-                                            <Button type="submit" style={{
-                                                backgroundColor: 'green',
-                                                color: 'white',
-                                                width: 200
-                                            }} >Tra cứu</Button>
-                                        </form>
-                                    </div>
+                                <TabPane tabId="iconHorizontalTabs1" >
+                                    <Container>
+                                        <Row>
+                                            <Col md={6}>
+                                                <form>
+                                                    <div className="form-group row">
+                                                        <label htmlFor="staticEmail require" className="col-md-3 col-form-label">Gửi từ</label>
+                                                        <div className=" col-md-9">
+                                                            <Select
+                                                                className="react-select react-select-info mt-2 rounded-0"
+                                                                onChange={(value) => { }}
+                                                                classNamePrefix="react-select"
+                                                                placeholder="Single Select"
+                                                                value={{ label: "", value: "" }}
+                                                                name=""
+                                                                onInputChange={(e) => { console.log(e) }}
+                                                                options={[
+                                                                    {
+                                                                        value: "",
+                                                                        label: "Single Option",
+                                                                        isDisabled: true,
+                                                                    },
+                                                                    { value: "2", label: "Foobar" },
+                                                                    { value: "3", label: "Is great" },
+                                                                ]}
+                                                            ></Select>
+                                                        </div>
+                                                    </div>
+                                                    <div className="form-group row">
+                                                        <label htmlFor="staticEmail require" className="col-md-3 col-form-label">Quận, huyện</label>
+                                                        <div className=" col-md-9">
+                                                            <Select
+                                                                className="react-select react-select-info mt-2 rounded-0"
+                                                                onChange={(value) => { }}
+                                                                classNamePrefix="react-select"
+                                                                placeholder="Single Select"
+                                                                value={{ label: "", value: "" }}
+                                                                name=""
+                                                                onInputChange={(e) => { console.log(e) }}
+                                                                options={[
+                                                                    {
+                                                                        value: "",
+                                                                        label: "Single Option",
+                                                                        isDisabled: true,
+                                                                    },
+                                                                    { value: "2", label: "Foobar" },
+                                                                    { value: "3", label: "Is great" },
+                                                                ]}
+                                                            ></Select>
+                                                        </div>
+                                                    </div>
+                                                    <div className="form-group row">
+                                                        <label htmlFor="staticEmail require" className="col-md-3 col-form-label">Giao đến</label>
+                                                        <div className=" col-md-9">
+                                                            <Select
+                                                                className="react-select react-select-info mt-2 rounded-0"
+                                                                onChange={(value) => { }}
+                                                                classNamePrefix="react-select"
+                                                                placeholder="Single Select"
+                                                                value={{ label: "", value: "" }}
+                                                                name=""
+                                                                onInputChange={(e) => { console.log(e) }}
+                                                                options={[
+                                                                    {
+                                                                        value: "",
+                                                                        label: "Single Option",
+                                                                        isDisabled: true,
+                                                                    },
+                                                                    { value: "2", label: "Foobar" },
+                                                                    { value: "3", label: "Is great" },
+                                                                ]}
+                                                            ></Select>
+                                                        </div>
+                                                    </div>
+                                                    <div className="form-group row">
+                                                        <label htmlFor="staticEmail require" className="col-md-3 col-form-label">Quận huyện</label>
+                                                        <div className=" col-md-9">
+                                                            <Select
+                                                                className="react-select react-select-info mt-2 rounded-0"
+                                                                onChange={(value) => { }}
+                                                                classNamePrefix="react-select"
+                                                                placeholder="Single Select"
+                                                                value={{ label: "", value: "" }}
+                                                                name=""
+                                                                onInputChange={(e) => { console.log(e) }}
+                                                                options={[
+                                                                    {
+                                                                        value: "",
+                                                                        label: "Single Option",
+                                                                        isDisabled: true,
+                                                                    },
+                                                                    { value: "2", label: "Foobar" },
+                                                                    { value: "3", label: "Is great" },
+                                                                ]}
+                                                            ></Select>
+                                                        </div>
+                                                    </div>
+                                                    <InputCustom
+                                                        title="Trọng lượng"
+                                                        type="number"
+                                                        wrapInputClassName={"col-md-9"}
+                                                        labelClassName={"col-md-3"}
+                                                    />
+                                                    <InputCustom
+                                                        title="Số tiền thu hộ"
+                                                        type="number"
+                                                        wrapInputClassName={"col-md-9 mt-2"}
+                                                        labelClassName={"col-md-3"}
+                                                    />
+                                                    <Button type="submit" style={{
+                                                        backgroundColor: 'green',
+                                                        color: 'white',
+                                                        width: 200
+                                                    }} >Tra cứu</Button>
+                                                </form>
+                                            </Col>
+                                            <Col md={6}>
+                                                <img
+                                                    src={require("assets/img/pages/3696913.jpg")}
+                                                    alt="..."
+                                                />
+                                            </Col>
+                                        </Row>
+                                    </Container>
                                 </TabPane>
                                 <TabPane tabId="iconHorizontalTabs2" className="mt-2">
                                     <Container >

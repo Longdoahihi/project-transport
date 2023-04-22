@@ -9,13 +9,13 @@
     font-size: 1.1rem;
     padding:  12px 20px;
 }
-.form-lookup button{
+.form-lookup .btn-search{
     position: absolute;
     bottom: -24px;
-    left: 35%;
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
+    width: 100%;
 }
 .react-select .react-select__control {
     border-radius: 0px;
