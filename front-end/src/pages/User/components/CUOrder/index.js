@@ -1,6 +1,6 @@
 import InputCustom from "components/InputCustom";
 import SelectCustom from "components/SelectCustom";
-import { Button, Card, CardBody, Col, Row, Table } from "reactstrap";
+import { Button, Card, CardBody, Col, FormGroup, Input, InputGroup, Label, Row, Table } from "reactstrap";
 import { CardTitle } from "reactstrap/es";
 
 function CUOrder() {
@@ -103,11 +103,28 @@ function CUOrder() {
                     <Card className="card-rounded card-no-shadow">
                         <CardBody className="mt-0 pt-0">
                             <CardTitle>
-                                <h5 className="mb-0">Chọn dịch vụ</h5>
+                                <h5 className="mb-0">Tiền thu hộ</h5>
                             </CardTitle>
-                            <CardBody>
-
-                            </CardBody>
+                            <div >
+                                <InputCustom
+                                    title="Số tiền thu hộ"
+                                    type="text"
+                                    isRequired={true}
+                                    labelWidth={120}
+                                    placeholder="Nhập số tiền thu hộ"
+                                    labelClassName=""
+                                    wrapInputClassName=""
+                                />
+                                <InputCustom
+                                    title="Ghi chú"
+                                    type="textarea"
+                                    row
+                                    isRequired={true}
+                                    placeholder="Nhập ghi chú"
+                                    labelClassName=""
+                                    wrapInputClassName=""
+                                />
+                            </div>
                         </CardBody>
                     </Card>
                 </Col>
@@ -117,9 +134,24 @@ function CUOrder() {
                             <CardTitle>
                                 <h5 className="mb-0">Yêu cầu giao hàng</h5>
                             </CardTitle>
-                            <CardBody>
-
-                            </CardBody>
+                            <div>
+                                <FormGroup check defaultValue={false}>
+                                    <Label check>
+                                        <Input style={{
+                                            position: 'relative', top: 2
+                                        }} defaultChecked type="radio" name="delevery" value={false} />
+                                        <span className="pl-2">Không cho phép kiểm hàng</span>
+                                    </Label>
+                                </FormGroup>
+                                <FormGroup check>
+                                    <Label check>
+                                        <Input type="radio" name="delevery" style={{
+                                            position: 'relative', top: 2
+                                        }} value={true} />
+                                        <span className="pl-2"> Cho phép kiểm hàng</span>
+                                    </Label>
+                                </FormGroup>
+                            </div>
                         </CardBody>
                     </Card>
                 </Col>
@@ -129,19 +161,34 @@ function CUOrder() {
                             <CardTitle>
                                 <h5 className="mb-0">Yêu cầu lấy hàng</h5>
                             </CardTitle>
-                            <CardBody>
-
-                            </CardBody>
+                            <div>
+                            <div>
+                                <FormGroup check defaultValue={false}>
+                                    <Label check>
+                                        <Input defaultChecked style={{
+                                            position: 'relative', top: 2
+                                        }} type="radio" name="request" />
+                                        <span className="pl-2">Đến nhà lấy hàng</span>
+                                    </Label>
+                                </FormGroup>
+                                <FormGroup check>
+                                    <Label check>
+                                        <Input type="radio" name="request" style={{
+                                            position: 'relative', top: 2
+                                        }} />
+                                        <span className="pl-2"> Lưu tại bưu cục</span>
+                                    </Label>
+                                </FormGroup>
+                            </div>
+                            </div>
                         </CardBody>
                     </Card>
                 </Col>
             </Row>
             <Row>
-                <Col md={6}>
-                    <label>Tiền trả người gửi: </label> <br />
-                    <label>Tiền thu hộ: </label> <br />
+                <Col md={6}>  
                     <label>Thời gian dự kiến: </label> <br />
-                    <label>Tổng tiền: </label> <br />
+                    <label>Tổng cước: </label> <br />
                 </Col>
                 <Col md={6} >
                     <div className="d-flex justify-content-end  ">
@@ -156,88 +203,6 @@ function CUOrder() {
             </Row>
         </Card>
     )
-
-    // return (
-    //     <Row>
-    //         <Col md={12}>
-    //             <h5 className="my-4">Danh sách đơn hàng</h5>
-    //         </Col>
-    //         <Col md={12}>
-    //             <Card className="card-plain ml-auto mr-auto">
-    //                 <CardBody className="pt-0">
-    //                     <table class="table table table-bordered table-hover pt-0 ">
-    //                         <thead>
-    //                             <tr>
-    //                                 <th class="text-center">#</th>
-    //                                 <th>Name</th>
-    //                                 <th>Job Position</th>
-    //                                 <th>Since</th>
-    //                                 <th class="text-right">Salary</th>
-    //                                 <th class="text-right">Actions</th>
-    //                             </tr>
-    //                         </thead>
-    //                         <tbody>
-    //                             <tr>
-    //                                 <td class="text-center">1</td>
-    //                                 <td>Andrew Mike</td>
-    //                                 <td>Develop</td>
-    //                                 <td>2013</td>
-    //                                 <td class="text-right">&euro; 99,225</td>
-    //                                 <td class="td-actions text-right">
-    //                                     <button type="button" rel="tooltip" class="btn btn-info">
-    //                                         <i class="now-ui-icons users_single-02"></i>
-    //                                     </button>
-    //                                     <button type="button" rel="tooltip" class="btn btn-success">
-    //                                         <i class="now-ui-icons ui-2_settings-90"></i>
-    //                                     </button>
-    //                                     <button type="button" rel="tooltip" class="btn btn-danger">
-    //                                         <i class="now-ui-icons ui-1_simple-remove"></i>
-    //                                     </button>
-    //                                 </td>
-    //                             </tr>
-    //                             <tr>
-    //                                 <td class="text-center">2</td>
-    //                                 <td>John Doe</td>
-    //                                 <td>Design</td>
-    //                                 <td>2012</td>
-    //                                 <td class="text-right">&euro; 89,241</td>
-    //                                 <td class="td-actions text-right">
-    //                                     <button type="button" rel="tooltip" class="btn btn-info">
-    //                                         <i class="now-ui-icons users_single-02"></i>
-    //                                     </button>
-    //                                     <button type="button" rel="tooltip" class="btn btn-success">
-    //                                         <i class="now-ui-icons ui-2_settings-90"></i>
-    //                                     </button>
-    //                                     <button type="button" rel="tooltip" class="btn btn-danger">
-    //                                         <i class="now-ui-icons ui-1_simple-remove"></i>
-    //                                     </button>
-    //                                 </td>
-    //                             </tr>
-    //                             <tr>
-    //                                 <td class="text-center">3</td>
-    //                                 <td>Alex Mike</td>
-    //                                 <td>Design</td>
-    //                                 <td>2010</td>
-    //                                 <td class="text-right">&euro; 92,144</td>
-    //                                 <td class="td-actions text-right">
-    //                                     <button type="button" rel="tooltip" class="btn btn-info">
-    //                                         <i class="now-ui-icons users_single-02"></i>
-    //                                     </button>
-    //                                     <button type="button" rel="tooltip" class="btn btn-success">
-    //                                         <i class="now-ui-icons ui-2_settings-90"></i>
-    //                                     </button>
-    //                                     <button type="button" rel="tooltip" class="btn btn-danger">
-    //                                         <i class="now-ui-icons ui-1_simple-remove"></i>
-    //                                     </button>
-    //                                 </td>
-    //                             </tr>
-    //                         </tbody>
-    //                     </table>
-    //                 </CardBody>
-    //             </Card>
-    //         </Col>
-    //     </Row>
-    // );
 }
 
 export default CUOrder;

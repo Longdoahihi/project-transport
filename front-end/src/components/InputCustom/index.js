@@ -5,19 +5,60 @@ function InputCustom({
     type = "text",
     isRequired = false,
     labelWidth = null,
-    placeholder ="",
+    placeholder = "",
     labelClassName = "",
     wrapInputClassName = "",
+    row = false,
 }) {
+    if (row) {
+        return (
+            <div
+                className={classNames({ "row": !!labelClassName && !!wrapInputClassName }, "form-group")}
+            >
+                <div>
+                    <label
+                        style={{
+                            minWidth: labelWidth ?? undefined
+                        }}
+                        className={classNames(labelClassName, "col-form-label")}
+                    >
+                        {title}
+                        {isRequired && <span style={{ color: 'red' }} >*</span>}
+                    </label>
+                </div>
+                <div className={classNames(wrapInputClassName)}
+                    style={{ flexGrow: !labelClassName && !wrapInputClassName ? 1 : undefined }}
+                >
+                    {
+                        type === "textarea" ? (
+                            <textarea style={{width: '100%'}} />
+                        ) : (
+                            <input
+                                type={type ?? "text"}
+                                style={{
+                                    padding: '8px 8px',
+                                    border: '1px solid rgba(1,1,1,0.12)',
+                                    width: '100%'
+                                }}
+
+                                placeholder={placeholder}
+
+                            />
+                        )
+                    }
+                </div>
+            </div>
+        )
+    }
     return (
         <div style={{
             display: !labelClassName || !wrapInputClassName ? 'flex' : undefined, alignItems: 'center',
         }}
-            className={classNames({ "row": !!labelClassName && !!wrapInputClassName },"form-group")}
+            className={classNames({ "row": !!labelClassName && !!wrapInputClassName }, "form-group")}
         >
             <label
                 style={{
-                    minWidth: labelWidth??undefined
+                    minWidth: labelWidth ?? undefined
                 }}
                 className={classNames(labelClassName, "col-form-label")}
             >
@@ -25,7 +66,7 @@ function InputCustom({
                 {isRequired && <span style={{ color: 'red' }} >*</span>}
             </label>
             <div className={classNames(wrapInputClassName)}
-                style={{flexGrow: !labelClassName && !wrapInputClassName ? 1 : undefined}}
+                style={{ flexGrow: !labelClassName && !wrapInputClassName ? 1 : undefined }}
             >
                 <input
                     type={type ?? "text"}

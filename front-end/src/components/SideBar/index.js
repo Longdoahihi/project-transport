@@ -106,7 +106,7 @@ function SideBar() {
                                             >
                                                 <div className="d-flex align-content-center">
                                                     <i class="now-ui-icons design_app custom-icon mr-2" style={{ lineHeight: '20px', fontSize: '20px' }} ></i>
-                                                    <span>Đơn hàng</span>
+                                                    <span>Tạo đơn hàng</span>
                                                 </div>
                                             </NavLink>
                                         </NavItem>
