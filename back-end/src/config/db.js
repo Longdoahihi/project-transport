@@ -7,9 +7,5 @@ AWS.config.update({
     region: process.env.AWS_DEFAULT_REGION,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
 });
-
-
 const dynamoClient = new AWS.DynamoDB.DocumentClient();
-
-
 module.exports = dynamoClient;

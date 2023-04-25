@@ -1,0 +1,11 @@
+.custom-sidebar .active{
+    background-color: white !important;
+    color: green !important;
+}
+.custom-sidebar .active i.custom-icon{ 
+    padding-left: 24px !important;
+}
+.custom-sidebar .nav-link{ 
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}

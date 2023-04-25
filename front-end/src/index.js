@@ -47,14 +47,12 @@ import HomePage from "pages/HomePage";
 import './assets/css/pages/app.css'
 import IntroPage from "pages/IntroPage";
 import NewsPage from "pages/NewsPage";
-import ContactPage from "pages/ContactPage";
+import UserHomePage from "pages/User/UserHomePage";
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
 root.render(
   <BrowserRouter>
     <Switch>
-
-      <Route path="/contact" render={(props) => <ContactPage {...props} />} />
+      <Route path="/user" render={(props) => <UserHomePage {...props} />} />
       <Route path="/news" render={(props) => <NewsPage {...props} />} />
       <Route path="/introduction" render={(props) => <IntroPage {...props} />} />
       <Route path="/about-us" render={(props) => <AboutUs {...props} />} />
