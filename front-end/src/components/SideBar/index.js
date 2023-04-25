@@ -15,6 +15,7 @@ import {
     Nav,
 } from "reactstrap";
 import 'assets/css/pages/sidebar/index.css'
+import CUOrder from "pages/User/components/CUOrder";
 function SideBar() {
     const [verticalTabs, setVerticalTabs] = React.useState("1");
     const [collapseOpen, setCollapseOpen] = React.useState(false);
@@ -78,8 +79,8 @@ function SideBar() {
                                                 }}
                                             >
                                                 <div className="d-flex align-content-center">
-                                                    <i class="now-ui-icons business_bank mr-2" style={{ lineHeight: '20px', fontSize: '20px' }} ></i>
-                                                    <span>Trang chủ</span>
+                                                    <i class="now-ui-icons business_bank custom-icon mr-2" style={{ lineHeight: '20px', fontSize: '20px' }} ></i>
+                                                    <span>Tổng quan</span>
                                                 </div>
                                             </NavLink>
                                         </NavItem>
@@ -104,8 +105,8 @@ function SideBar() {
                                                 }}
                                             >
                                                 <div className="d-flex align-content-center">
-                                                    <i class="now-ui-icons design_app mr-2" style={{ lineHeight: '20px', fontSize: '20px' }} ></i>
-                                                    <span>Tạo đơn</span>
+                                                    <i class="now-ui-icons design_app custom-icon mr-2" style={{ lineHeight: '20px', fontSize: '20px' }} ></i>
+                                                    <span>Đơn hàng</span>
                                                 </div>
                                             </NavLink>
                                         </NavItem>
@@ -123,7 +124,7 @@ function SideBar() {
                                                             href="#pablo"
                                                             onClick={(e) => {
                                                                 e.preventDefault();
-                                                                setVerticalTabs("3"); 
+                                                                setVerticalTabs("3");
                                                                 changeCollapse(1);
                                                             }}
                                                             style={{
@@ -145,14 +146,14 @@ function SideBar() {
                                                                 className="d-flex justify-content-between align-content-center"
                                                             >
                                                                 <div className="d-flex align-content-center">
-                                                                    <i class="now-ui-icons ui-1_zoom-bold mr-2" style={{ lineHeight: '20px', fontSize: '20px', color: 'white', transform: 'none' }} ></i>
+                                                                    <i class="now-ui-icons ui-1_zoom-bold custom-icon mr-2" style={{ lineHeight: '20px', fontSize: '20px', color: 'white', transform: 'none' }} ></i>
                                                                     <span>Tra cứu</span>
                                                                 </div>
                                                                 <i style={{
                                                                     lineHeight: "24px",
                                                                     color: 'white',
                                                                     fontSize: '16px'
-                                                                }} className="now-ui-icons about-contact arrows-1_minimal-down " ></i>
+                                                                }} className="now-ui-icons custom-icon about-contact arrows-1_minimal-down " ></i>
                                                             </a>
                                                         </NavLink>
                                                     </CardHeader>
@@ -228,14 +229,14 @@ function SideBar() {
                                                                 className="d-flex justify-content-between align-content-center"
                                                             >
                                                                 <div className="d-flex align-content-center">
-                                                                    <i class="now-ui-icons ui-1_settings-gear-63 mr-2" style={{ lineHeight: '20px', fontSize: '20px', color: 'white', transform: 'none' }} ></i>
+                                                                    <i class="now-ui-icons ui-1_settings-gear-63 custom-icon mr-2" style={{ lineHeight: '20px', fontSize: '20px', color: 'white', transform: 'none' }} ></i>
                                                                     <span>Cài đặt tài khoản</span>
                                                                 </div>
                                                                 <i style={{
                                                                     lineHeight: "24px",
                                                                     color: 'white',
                                                                     fontSize: '16px'
-                                                                }} className="now-ui-icons about-contact arrows-1_minimal-down " ></i>
+                                                                }} className="now-ui-icons custom-icon about-contact arrows-1_minimal-down " ></i>
                                                             </a>
                                                         </NavLink>
                                                     </CardHeader>
@@ -249,7 +250,7 @@ function SideBar() {
                                                                     setVerticalTabs("6");
                                                                 }}
                                                             >
-                                                                Thông tin tài khoản 
+                                                                Thông tin tài khoản
                                                             </NavLink>
                                                             <NavLink className={classNames(verticalTabs === "7" ? "active" : "", "mb-0", "text-left")} style={{
                                                                 backgroundColor: 'transparent', color: 'white', cursor: 'pointer', borderRadius: 0, boxShadow: 'none'
@@ -276,7 +277,7 @@ function SideBar() {
                                     1
                                 </TabPane>
                                 <TabPane tabId="verticalTabs2">
-                                    2
+                                    <CUOrder />
                                 </TabPane>
                                 <TabPane tabId="verticalTabs3">
                                     3

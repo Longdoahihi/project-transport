@@ -2,7 +2,7 @@
     background-color: white !important;
     color: green !important;
 }
-.custom-sidebar .active i{ 
+.custom-sidebar .active i.custom-icon{ 
     padding-left: 24px !important;
 }
 .custom-sidebar .nav-link{ 

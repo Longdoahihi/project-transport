@@ -47,10 +47,8 @@ import HomePage from "pages/HomePage";
 import './assets/css/pages/app.css'
 import IntroPage from "pages/IntroPage";
 import NewsPage from "pages/NewsPage";
-import ContactPage from "pages/ContactPage";
 import UserHomePage from "pages/User/UserHomePage";
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
 root.render(
   <BrowserRouter>
     <Switch>
