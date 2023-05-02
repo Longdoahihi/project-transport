@@ -16,6 +16,12 @@ import {
 } from "reactstrap";
 import 'assets/css/pages/sidebar/index.css'
 import CUOrder from "pages/User/components/CUOrder";
+import ROrder from "pages/User/components/ROrder";
+import Order from "pages/User/components/Order";
+import CostEstimate from "pages/User/CostEstimate";
+import PostOffice from "pages/User/PostOffice";
+import UserInfo from "pages/User/UserInfo";
+import ChangePassword from "pages/User/ChangePassword";
 function SideBar() {
     const [verticalTabs, setVerticalTabs] = React.useState("1");
     const [collapseOpen, setCollapseOpen] = React.useState(false);
@@ -280,19 +286,19 @@ function SideBar() {
                                     <CUOrder />
                                 </TabPane>
                                 <TabPane tabId="verticalTabs3">
-                                    3
+                                    <Order />
                                 </TabPane>
                                 <TabPane tabId="verticalTabs4">
-                                    4
+                                    <CostEstimate />
                                 </TabPane>
                                 <TabPane tabId="verticalTabs5">
-                                    5
+                                    <PostOffice />
                                 </TabPane>
                                 <TabPane tabId="verticalTabs6">
-                                    6
+                                    <UserInfo />
                                 </TabPane>
                                 <TabPane tabId="verticalTabs7">
-                                    7
+                                    <ChangePassword/>
                                 </TabPane>
                             </TabContent>
                         </Col>

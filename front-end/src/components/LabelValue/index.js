@@ -1,16 +1,15 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types'
-function InputCustom({
-    title = "",
-    type = "text",
+function LabelValueCustom({
+    label = "",
+    value = "",
     isRequired = false,
     labelWidth = null,
-    placeholder = "",
     labelClassName = "",
     wrapInputClassName = "",
-    row = true,
+    row = false,
 }) {
-    if (!row) {
+    if (row) {
         return (
             <div
                 className={classNames({ "row": !!labelClassName && !!wrapInputClassName }, "form-group")}
@@ -18,34 +17,19 @@ function InputCustom({
                 <div>
                     <label
                         style={{
-                            minWidth: labelWidth ?? undefined
+                            minWidth: labelWidth ?? undefined,
+                            fontWeight: 'bold'
                         }}
                         className={classNames(labelClassName, "col-form-label")}
                     >
-                        {title}
-                        {isRequired && <span style={{ color: 'red' }} >*</span>}
+                        {label}
+                        {isRequired && <span style={{ color: 'red' }} >*</span>}:
                     </label>
                 </div>
                 <div className={classNames(wrapInputClassName)}
                     style={{ flexGrow: !labelClassName && !wrapInputClassName ? 1 : undefined }}
                 >
-                    {
-                        type === "textarea" ? (
-                            <textarea style={{width: '100%'}} />
-                        ) : (
-                            <input
-                                type={type ?? "text"}
-                                style={{
-                                    padding: '8px 8px',
-                                    border: '1px solid rgba(1,1,1,0.12)',
-                                    width: '100%'
-                                }}
-
-                                placeholder={placeholder}
-
-                            />
-                        )
-                    }
+                    {value}
                 </div>
             </div>
         )
@@ -58,36 +42,27 @@ function InputCustom({
         >
             <label
                 style={{
-                    minWidth: labelWidth ?? undefined
+                    minWidth: labelWidth ?? undefined,
+                    fontWeight: '600'
                 }}
                 className={classNames(labelClassName, "col-form-label")}
             >
-                {title}
-                {isRequired && <span style={{ color: 'red' }} >*</span>}
+                {label}
+                {isRequired && <span style={{ color: 'red' }} >*</span>}:&nbsp;
             </label>
             <div className={classNames(wrapInputClassName)}
                 style={{ flexGrow: !labelClassName && !wrapInputClassName ? 1 : undefined }}
             >
-                <input
-                    type={type ?? "text"}
-                    style={{
-                        padding: '8px 8px',
-                        border: '1px solid rgba(1,1,1,0.12)',
-                        width: '100%'
-                    }}
-
-                    placeholder={placeholder}
-
-                />
+                {value}
             </div>
         </div>);
 }
-InputCustom.propTypes = {
-    title: PropTypes.string,
+LabelValueCustom.propTypes = {
+    label: PropTypes.string,
     type: PropTypes.oneOf(["text", "number"]),
     isRequired: PropTypes.bool,
     labelWidth: PropTypes.any
 }
 
 
-export default InputCustom;
+export default LabelValueCustom;
