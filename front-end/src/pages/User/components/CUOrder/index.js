@@ -1,6 +1,6 @@
 import InputCustom from "components/InputCustom";
 import SelectCustom from "components/SelectCustom";
-import { Button, Card, CardBody, Col, FormGroup, Input, InputGroup, Label, Row, Table } from "reactstrap";
+import {  Card, CardBody, Col, FormGroup, Input, Label, Row } from "reactstrap";
 import { CardTitle } from "reactstrap/es";
 
 function CUOrder() {

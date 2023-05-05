@@ -48,6 +48,7 @@ import './assets/css/pages/app.css'
 import IntroPage from "pages/IntroPage";
 import NewsPage from "pages/NewsPage";
 import UserHomePage from "pages/User/UserHomePage";
+import ContactPage from "pages/ContactPage";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
@@ -58,6 +59,7 @@ root.render(
       <Route path="/about-us" render={(props) => <AboutUs {...props} />} />
       <Route path="/blog-post" render={(props) => <BlogPost {...props} />} />
       <Route path="/blog-posts" render={(props) => <BlogPosts {...props} />} />
+      <Route path="/contact" render={(props) => <ContactPage {...props} />} />
       <Route path="/contact-us" render={(props) => <ContactUs {...props} />} />
       <Route path="/e-commerce" render={(props) => <Ecommerce {...props} />} />
       <Route path="/index" render={(props) => <Index {...props} />} />

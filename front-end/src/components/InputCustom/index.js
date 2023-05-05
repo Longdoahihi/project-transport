@@ -8,9 +8,10 @@ function InputCustom({
     placeholder = "",
     labelClassName = "",
     wrapInputClassName = "",
-    row = false,
+    row = true,
+    disabled = false
 }) {
-    if (row) {
+    if (!row) {
         return (
             <div
                 className={classNames({ "row": !!labelClassName && !!wrapInputClassName }, "form-group")}
@@ -40,7 +41,7 @@ function InputCustom({
                                     border: '1px solid rgba(1,1,1,0.12)',
                                     width: '100%'
                                 }}
-
+                                disabled={disabled}
                                 placeholder={placeholder}
 
                             />
@@ -75,7 +76,7 @@ function InputCustom({
                         border: '1px solid rgba(1,1,1,0.12)',
                         width: '100%'
                     }}
-
+                    disabled={disabled}
                     placeholder={placeholder}
 
                 />
