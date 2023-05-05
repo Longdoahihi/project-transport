@@ -9,6 +9,7 @@ function InputCustom({
     labelClassName = "",
     wrapInputClassName = "",
     row = true,
+    disabled = false
 }) {
     if (!row) {
         return (
@@ -40,7 +41,7 @@ function InputCustom({
                                     border: '1px solid rgba(1,1,1,0.12)',
                                     width: '100%'
                                 }}
-
+                                disabled={disabled}
                                 placeholder={placeholder}
 
                             />
@@ -75,7 +76,7 @@ function InputCustom({
                         border: '1px solid rgba(1,1,1,0.12)',
                         width: '100%'
                     }}
-
+                    disabled={disabled}
                     placeholder={placeholder}
 
                 />

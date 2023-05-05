@@ -22,6 +22,7 @@ import CostEstimate from "pages/User/CostEstimate";
 import PostOffice from "pages/User/PostOffice";
 import UserInfo from "pages/User/UserInfo";
 import ChangePassword from "pages/User/ChangePassword";
+import UDelivery from "pages/User/UDelivery";
 function SideBar() {
     const [verticalTabs, setVerticalTabs] = React.useState("1");
     const [collapseOpen, setCollapseOpen] = React.useState(false);
@@ -258,21 +259,37 @@ function SideBar() {
                                                             >
                                                                 Thông tin tài khoản
                                                             </NavLink>
-                                                            <NavLink className={classNames(verticalTabs === "7" ? "active" : "", "mb-0", "text-left")} style={{
-                                                                backgroundColor: 'transparent', color: 'white', cursor: 'pointer', borderRadius: 0, boxShadow: 'none'
-                                                            }}
-                                                                onClick={(e) => {
-                                                                    e.preventDefault();
-                                                                    setVerticalTabs("7");
-                                                                }}
-                                                            >
-                                                                Đổi mật khẩu
-                                                            </NavLink>
                                                         </NavItem>
                                                     </Collapse>
                                                 </Card>
                                             </NavItem>
                                         </div>
+                                        <NavItem style={{
+                                            borderRadius: '0px'
+                                        }}>
+                                            <NavLink
+                                                className={classNames(verticalTabs === "7" ? "active" : "", "px-0", "mb-0")}
+                                                href="#pablo"
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    setVerticalTabs("7");
+                                                    changeCollapse(-1);
+                                                }}
+                                                style={{
+                                                    backgroundColor: 'transparent',
+                                                    boxShadow: 'none',
+                                                    textAlign: 'left',
+                                                    color: 'white',
+                                                    borderRadius: '0px',
+                                                    borderBottom: '1px solid white'
+                                                }}
+                                            >
+                                                <div className="d-flex align-content-center">
+                                                    <i class="now-ui-icons design_app custom-icon mr-2" style={{ lineHeight: '20px', fontSize: '20px' }} ></i>
+                                                    <span>Cập nhật trạng thái giao hàng</span>
+                                                </div>
+                                            </NavLink>
+                                        </NavItem>
                                     </Col>
                                 </Row>
                             </div>
@@ -298,7 +315,7 @@ function SideBar() {
                                     <UserInfo />
                                 </TabPane>
                                 <TabPane tabId="verticalTabs7">
-                                    <ChangePassword/>
+                                    <UDelivery />
                                 </TabPane>
                             </TabContent>
                         </Col>
