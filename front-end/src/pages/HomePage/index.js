@@ -28,6 +28,7 @@ import 'assets/css/pages/home-page/index.css'
 import classNames from "classnames";
 import InputCustom from "components/InputCustom";
 import SelectCustom from "components/SelectCustom";
+import CustomFooter from "components/CustomFooter";
 function HomePage() {
     const [horizontalTabs, setHorizontalTabs] = React.useState("1");
     const [verticalTabs, setVerticalTabs] = React.useState("1");
@@ -369,7 +370,7 @@ function HomePage() {
                         </Row>
                     </Container>
                 </div>
-                <FooterBlack />
+                <CustomFooter />
             </div>
         </>
     );

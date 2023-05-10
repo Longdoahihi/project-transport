@@ -1,11 +1,17 @@
-.custom-sidebar .active{
+.custom-sidebar .active {
     background-color: white !important;
+}
+
+.custom-sidebar .active .nav-item-text {
     color: green !important;
+
 }
-.custom-sidebar .active i.custom-icon{ 
-    padding-left: 24px !important;
+
+.custom-sidebar .active i.custom-icon {
+    padding-left: 12px !important;
 }
-.custom-sidebar .nav-link{ 
+
+.custom-sidebar .nav-link {
     padding-top: 12px !important;
     padding-bottom: 12px !important;
 }

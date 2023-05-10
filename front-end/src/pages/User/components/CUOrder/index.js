@@ -1,6 +1,6 @@
 import InputCustom from "components/InputCustom";
 import SelectCustom from "components/SelectCustom";
-import {  Card, CardBody, Col, FormGroup, Input, Label, Row } from "reactstrap";
+import { Card, CardBody, Col, FormGroup, Input, Label, Row } from "reactstrap";
 import { CardTitle } from "reactstrap/es";
 
 function CUOrder() {
@@ -10,31 +10,70 @@ function CUOrder() {
                 <Col md={6} >
                     <Card className="card-rounded card-no-shadow">
                         <CardTitle className="px-4">
-                            <h5 className="mb-0" ><i className="now-ui-icons users_single-02" style={{ lineHeight: "16px" }} ></i> Người gửi</h5>
+                            <h5 className="mb-0 text-icon" ><i className="now-ui-icons users_single-02" style={{ lineHeight: "16px" }} ></i> Người gửi</h5>
                         </CardTitle>
-                        <CardBody className="mt-0 pt-0">
-                            <SelectCustom />
+                        <CardBody className="mt-0 py-0">
+                            <InputCustom
+                                title={"Họ Tên"}
+                                isRequired
+                                row={false}
+                                disabled={true}
+                                placeholder={"Nhập họ tên..."}
+                            />
+                            <InputCustom
+                                title={"Số điện thoại"}
+                                isRequired
+                                row={false}
+                                disabled={true}
+                                type={"tel"}
+                                placeholder={"Nhập số điện thoại"}
+                            />
+                            <SelectCustom
+                                label="Địa chỉ"
+                                isRequired={true}
+                                subLabel={"Vui lòng chọn địa chỉ bưu cục gần nhất"}
+                                placeholder={"Chọn địa chỉ..."}
+                            />
                         </CardBody>
                     </Card>
                 </Col>
                 <Col md={6}>
                     <Card className="card-rounded card-no-shadow">
                         <CardTitle className="px-4">
-                            <h5 className="mb-0" ><i className="now-ui-icons users_single-02" style={{ lineHeight: "16px" }} ></i> Người nhận</h5>
+                            <h5 className="mb-0 text-icon" ><i className="now-ui-icons users_single-02" style={{ lineHeight: "16px" }} ></i> Người nhận</h5>
                         </CardTitle>
-                        <CardBody className="mt-0 pt-0">
-                            <SelectCustom />
+                        <CardBody className="mt-0 py-0">
+                            <InputCustom
+                                title={"Họ Tên"}
+                                isRequired
+                                row={false}
+                                placeholder={"Nhập họ tên..."}
+                            />
+                            <InputCustom
+                                title={"Số điện thoại"}
+                                isRequired
+                                row={false}
+                                type={"tel"}
+                                placeholder={"Nhập số điện thoại"}
+                            />
+                            <SelectCustom
+                                label="Địa chỉ"
+                                isRequired={true}
+                                subLabel={"Vui lòng chọn địa chỉ bưu cục gần nhất"}
+                                placeholder={"Chọn địa chỉ..."}
+                            />
                         </CardBody>
                     </Card>
                 </Col>
             </Row>
+            <hr style={{ width: '97%', margin: 'auto' }} className="mt-2" />
             <Row>
                 <Col md={12}>
                     <Card className="card-rounded card-no-shadow">
                         <CardTitle className="px-4">
-                            <h5 className="mb-0" ><i className="now-ui-icons users_single-02" style={{ lineHeight: "16px" }} ></i> Thông tin hàng hóa</h5>
+                            <h5 className="mb-0 text-icon" ><i className="now-ui-icons users_single-02" style={{ lineHeight: "16px" }} ></i> Thông tin hàng hóa</h5>
                         </CardTitle>
-                        <CardBody className="mt-0 pt-0">
+                        <CardBody className="mt-0 py-0">
                             <Row>
                                 <Col md={4}>
                                     <InputCustom
@@ -98,10 +137,11 @@ function CUOrder() {
                     </Card>
                 </Col>
             </Row>
+            <hr style={{ width: '97%', margin: 'auto' }} className="mt-2" />
             <Row>
                 <Col md={4}>
                     <Card className="card-rounded card-no-shadow">
-                        <CardBody className="mt-0 pt-0">
+                        <CardBody className="mt-0 py-0 pr-0">
                             <CardTitle>
                                 <h5 className="mb-0">Tiền thu hộ</h5>
                             </CardTitle>
@@ -120,6 +160,7 @@ function CUOrder() {
                                     type="textarea"
                                     row
                                     isRequired={true}
+                                    labelWidth={120}
                                     placeholder="Nhập ghi chú"
                                     labelClassName=""
                                     wrapInputClassName=""
@@ -162,36 +203,41 @@ function CUOrder() {
                                 <h5 className="mb-0">Yêu cầu lấy hàng</h5>
                             </CardTitle>
                             <div>
-                            <div>
-                                <FormGroup check defaultValue={false}>
-                                    <Label check>
-                                        <Input defaultChecked style={{
-                                            position: 'relative', top: 2
-                                        }} type="radio" name="request" />
-                                        <span className="pl-2">Đến nhà lấy hàng</span>
-                                    </Label>
-                                </FormGroup>
-                                <FormGroup check>
-                                    <Label check>
-                                        <Input type="radio" name="request" style={{
-                                            position: 'relative', top: 2
-                                        }} />
-                                        <span className="pl-2"> Lưu tại bưu cục</span>
-                                    </Label>
-                                </FormGroup>
-                            </div>
+                                <div>
+                                    <FormGroup check defaultValue={false}>
+                                        <Label check>
+                                            <Input defaultChecked style={{
+                                                position: 'relative', top: 2
+                                            }} type="radio" name="request" />
+                                            <span className="pl-2">Đến nhà lấy hàng</span>
+                                        </Label>
+                                    </FormGroup>
+                                    <FormGroup check>
+                                        <Label check>
+                                            <Input type="radio" name="request" style={{
+                                                position: 'relative', top: 2
+                                            }} />
+                                            <span className="pl-2"> Lưu tại bưu cục</span>
+                                        </Label>
+                                    </FormGroup>
+                                </div>
                             </div>
                         </CardBody>
                     </Card>
                 </Col>
             </Row>
+            <hr style={{ width: '97%', margin: 'auto' }} className="mt-2" />
             <Row>
-                <Col md={6}>  
-                    <label>Thời gian dự kiến: </label> <br />
-                    <label>Tổng cước: </label> <br />
+                <Col md={6} >
+                    <Card className="card-no-shadow">
+                        <CardBody>
+                            <label>Thời gian dự kiến: </label> <br />
+                            <label>Tổng cước: </label> <br />
+                        </CardBody>
+                    </Card>
                 </Col>
                 <Col md={6} >
-                    <div className="d-flex justify-content-end  ">
+                    <div className="d-flex justify-content-end align-items-center ">
                         <button
                             className="btn btn-success btn-lg"
                         ><i class="now-ui-icons ui-1_send"></i> Gửi ngay</button>

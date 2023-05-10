@@ -51,9 +51,15 @@ function SideBar() {
                         className="nav-pills-info flex-column row"
                         pills
                         role="tablist"
-                        style={{ maxHeight: '100vh' }}
+                        style={{ maxHeight: '100vh',position: 'relative' }}
                     >
-                        <Col md="2" xs="3" sm="4" >
+                        <Col md="2" xs="3" sm="4"
+                            style={{
+                                position: 'fixed',
+                                zIndex: 9999,
+                                maxWidth: 250
+                            }}
+                        >
                             <div id="collapse">
                                 <Row style={{
                                     backgroundColor: 'green',
@@ -65,7 +71,7 @@ function SideBar() {
                                                 <h5 className="font-weight-bold content-center mb-0 py-4" style={{ color: 'white' }} >Mien Bac Transport</h5>
                                             </NavItem>
                                         </NavItem>
-                                        <NavItem style={{
+                                        {/* <NavItem style={{
                                             borderRadius: '0px'
                                         }}>
                                             <NavLink
@@ -90,7 +96,7 @@ function SideBar() {
                                                     <span>Tổng quan</span>
                                                 </div>
                                             </NavLink>
-                                        </NavItem>
+                                        </NavItem> */}
                                         <NavItem style={{
                                             borderRadius: '0px'
                                         }}>
@@ -113,10 +119,36 @@ function SideBar() {
                                             >
                                                 <div className="d-flex align-content-center">
                                                     <i class="now-ui-icons design_app custom-icon mr-2" style={{ lineHeight: '20px', fontSize: '20px' }} ></i>
-                                                    <span>Tạo đơn hàng</span>
+                                                    <span className="nav-item-text">Tạo vận đơn</span>
                                                 </div>
                                             </NavLink>
                                         </NavItem>
+                                        {/* <NavItem style={{
+                                            borderRadius: '0px'
+                                        }}>
+                                            <NavLink
+                                                className={classNames(verticalTabs === "9" ? "active" : "", "px-0", "mb-0")}
+                                                href="#pablo"
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    setVerticalTabs("9");
+                                                    changeCollapse(-1);
+                                                }}
+                                                style={{
+                                                    backgroundColor: 'transparent',
+                                                    boxShadow: 'none',
+                                                    textAlign: 'left',
+                                                    color: 'white',
+                                                    borderRadius: '0px',
+                                                    borderBottom: '1px solid white'
+                                                }}
+                                            >
+                                                <div className="d-flex align-content-center">
+                                                    <i class="now-ui-icons files_paper design_app custom-icon mr-2" style={{ lineHeight: '20px', fontSize: '20px' }} ></i>
+                                                    <span className="nav-item-text">Quản lý phiếu nhập/xuất</span>
+                                                </div>
+                                            </NavLink>
+                                        </NavItem> */}
                                         <div
                                             aria-multiselectable={true}
                                             className="card-collapse"
@@ -154,7 +186,7 @@ function SideBar() {
                                                             >
                                                                 <div className="d-flex align-content-center">
                                                                     <i class="now-ui-icons ui-1_zoom-bold custom-icon mr-2" style={{ lineHeight: '20px', fontSize: '20px', color: 'white', transform: 'none' }} ></i>
-                                                                    <span>Tra cứu</span>
+                                                                    <span className="nav-item-text">Tra cứu</span>
                                                                 </div>
                                                                 <i style={{
                                                                     lineHeight: "24px",
@@ -174,7 +206,7 @@ function SideBar() {
                                                                     setVerticalTabs("3");
                                                                 }}
                                                             >
-                                                                Tra cứu vận đơn
+                                                                <span className="nav-item-text" >Tra cứu vận đơn</span>
                                                             </NavLink>
                                                             <NavLink className={classNames(verticalTabs === "4" ? "active" : "", "mb-0", "text-left")} style={{
                                                                 backgroundColor: 'transparent', color: 'white', cursor: 'pointer', borderRadius: 0, boxShadow: 'none'
@@ -184,7 +216,8 @@ function SideBar() {
                                                                     setVerticalTabs("4");
                                                                 }}
                                                             >
-                                                                Ước tính chi phí
+
+                                                                <span className="nav-item-text" >Ước tính chi phí</span>
                                                             </NavLink>
                                                             <NavLink className={classNames(verticalTabs === "5" ? "active" : "", "mb-0", "text-left")} style={{
                                                                 backgroundColor: 'transparent', color: 'white', cursor: 'pointer', borderRadius: 0, boxShadow: 'none'
@@ -194,7 +227,8 @@ function SideBar() {
                                                                     setVerticalTabs("5");
                                                                 }}
                                                             >
-                                                                Tìm kiếm bưu cục
+
+                                                                <span className="nav-item-text" >Tìm kiếm bưu cục</span>
                                                             </NavLink>
                                                         </NavItem>
                                                     </Collapse>
@@ -237,7 +271,7 @@ function SideBar() {
                                                             >
                                                                 <div className="d-flex align-content-center">
                                                                     <i class="now-ui-icons ui-1_settings-gear-63 custom-icon mr-2" style={{ lineHeight: '20px', fontSize: '20px', color: 'white', transform: 'none' }} ></i>
-                                                                    <span>Cài đặt tài khoản</span>
+                                                                    <span className="nav-item-text">Cài đặt tài khoản</span>
                                                                 </div>
                                                                 <i style={{
                                                                     lineHeight: "24px",
@@ -257,7 +291,7 @@ function SideBar() {
                                                                     setVerticalTabs("6");
                                                                 }}
                                                             >
-                                                                Thông tin tài khoản
+                                                                <span className="nav-item-text">Thông tin tài khoản</span>
                                                             </NavLink>
                                                         </NavItem>
                                                     </Collapse>
@@ -286,15 +320,44 @@ function SideBar() {
                                             >
                                                 <div className="d-flex align-content-center">
                                                     <i class="now-ui-icons design_app custom-icon mr-2" style={{ lineHeight: '20px', fontSize: '20px' }} ></i>
-                                                    <span>Cập nhật trạng thái giao hàng</span>
+                                                    <span className="nav-item-text" >Trạng thái giao hàng</span>
                                                 </div>
                                             </NavLink>
                                         </NavItem>
                                     </Col>
+                                    <Col md="12" className="d-flex flex-column justify-content-end">
+                                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                                            <img
+                                                alt="avatar"
+                                                src={require("assets/img/usher.jpg")}
+                                                style={{
+                                                    width: 40,
+                                                    height: 40,
+                                                    borderRadius: '50%',
+                                                    marginRight: 12
+                                                }}
+                                            />
+                                            <div
+                                                style={{
+                                                    color: 'white',
+                                                    fontWeight: 700,
+
+                                                }}
+                                            >Quách Văn Long</div>
+                                        </div>
+                                        <button  className="btn btn-large btn-success d-flex justify-content-center text-icon" style={{ fontSize: 14, fontWeight: 'bold', color: 'white', padding: '12px 0px' }}>
+                                            <i class="now-ui-icons arrows-1_share-66" style={{ transform: 'rotate(90deg)' }}></i>
+                                            <span>Đăng xuất</span>
+                                        </button>
+                                    </Col>
                                 </Row>
                             </div>
                         </Col>
-                        <Col md="10">
+                        <Col md="10"
+                            style={{
+                                marginLeft: 250
+                            }}
+                        >
                             <TabContent activeTab={"verticalTabs" + verticalTabs}>
                                 <TabPane tabId="verticalTabs1">
                                     1

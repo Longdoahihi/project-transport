@@ -27,6 +27,7 @@ function LoginPage() {
     const [firstFocus, setFirstFocus] = React.useState(false);
     const [lastFocus, setLastFocus] = React.useState(false);
     const [isShow, setIsShow] = React.useState(false);
+    const [formState, setFormState] = React.useState('login'); // login,register,forgot
     React.useEffect(() => {
         document.body.classList.add("login-page");
         document.body.classList.add("sidebar-collapse");
@@ -62,51 +63,150 @@ function LoginPage() {
                                                 ></img>
                                             </div>
                                         </CardHeader>
-                                        <CardBody  >
-                                            <InputGroup
-                                                className={
-                                                    "no-border input-lg" +
-                                                    (firstFocus ? " input-group-focus" : "")
-                                                }
-                                            >
-                                                <InputGroupAddon addonType="prepend">
-                                                    <InputGroupText>
-                                                        <i className="now-ui-icons ui-1_email-85"></i>
-                                                    </InputGroupText>
-                                                </InputGroupAddon>
-                                                <Input
-                                                    placeholder="Email..."
-                                                    type="email"
-                                                    onFocus={() => setFirstFocus(true)}
-                                                    onBlur={() => setFirstFocus(false)}
-                                                ></Input>
-                                            </InputGroup>
-                                            <InputGroup
-                                                className={
-                                                    "no-border input-lg" +
-                                                    (lastFocus ? " input-group-focus" : "")
-                                                }
-                                            >
-                                                <InputGroupAddon addonType="prepend" style={{
-                                                    cursor: 'pointer',
-                                                }}
-                                                onClick={()=>{
-                                                    setIsShow(!isShow)
-                                                }}
-                                                >
-                                                    <InputGroupText>
-                                                        <i className="now-ui-icons ui-1_lock-circle-open"></i>
-                                                    </InputGroupText>
-                                                </InputGroupAddon>
-                                                <Input
-                                                    placeholder="Mật khẩu..."
-                                                    type={isShow ? "text" : "password"}
-                                                    
-                                                    onFocus={() => setLastFocus(true)}
-                                                    onBlur={() => setLastFocus(false)}
-                                                ></Input>
-                                            </InputGroup>
-                                        </CardBody>
+                                        {
+                                            formState === "login" ?
+                                                (
+                                                    <CardBody  >
+                                                        <InputGroup
+                                                            className={
+                                                                "no-border input-lg" +
+                                                                (firstFocus ? " input-group-focus" : "")
+                                                            }
+                                                        >
+                                                            <InputGroupAddon addonType="prepend">
+                                                                <InputGroupText>
+                                                                    <i className="now-ui-icons ui-1_email-85"></i>
+                                                                </InputGroupText>
+                                                            </InputGroupAddon>
+                                                            <Input
+                                                                placeholder="Email..."
+                                                                type="email"
+                                                                onFocus={() => setFirstFocus(true)}
+                                                                onBlur={() => setFirstFocus(false)}
+                                                            ></Input>
+                                                        </InputGroup>
+                                                        <InputGroup
+                                                            className={
+                                                                "no-border input-lg" +
+                                                                (lastFocus ? " input-group-focus" : "")
+                                                            }
+                                                        >
+                                                            <InputGroupAddon addonType="prepend" style={{
+                                                                cursor: 'pointer',
+                                                            }}
+                                                                onClick={() => {
+                                                                    setIsShow(!isShow)
+                                                                }}
+                                                            >
+                                                                <InputGroupText>
+                                                                    <i className="now-ui-icons ui-1_lock-circle-open"></i>
+                                                                </InputGroupText>
+                                                            </InputGroupAddon>
+                                                            <Input
+                                                                placeholder="Mật khẩu..."
+                                                                type={isShow ? "text" : "password"}
+
+                                                                onFocus={() => setLastFocus(true)}
+                                                                onBlur={() => setLastFocus(false)}
+                                                            ></Input>
+                                                        </InputGroup>
+                                                    </CardBody>
+                                                ) :
+                                                formState === "register" ?
+                                                    (
+                                                        <CardBody  >
+                                                            <InputGroup
+                                                                className={
+                                                                    "no-border input-lg" +
+                                                                    (firstFocus ? " input-group-focus" : "")
+                                                                }
+                                                            >
+                                                                <InputGroupAddon addonType="prepend">
+                                                                    <InputGroupText>
+                                                                        <i className="now-ui-icons ui-1_email-85"></i>
+                                                                    </InputGroupText>
+                                                                </InputGroupAddon>
+                                                                <Input
+                                                                    placeholder="Email..."
+                                                                    type="email"
+                                                                    onFocus={() => setFirstFocus(true)}
+                                                                    onBlur={() => setFirstFocus(false)}
+                                                                ></Input>
+                                                            </InputGroup>
+                                                            <InputGroup
+                                                                className={
+                                                                    "no-border input-lg" +
+                                                                    (lastFocus ? " input-group-focus" : "")
+                                                                }
+                                                            >
+                                                                <InputGroupAddon addonType="prepend" style={{
+                                                                    cursor: 'pointer',
+                                                                }}
+                                                                    onClick={() => {
+                                                                        setIsShow(!isShow)
+                                                                    }}
+                                                                >
+                                                                    <InputGroupText>
+                                                                        <i className="now-ui-icons ui-1_lock-circle-open"></i>
+                                                                    </InputGroupText>
+                                                                </InputGroupAddon>
+                                                                <Input
+                                                                    placeholder="Mật khẩu..."
+                                                                    type={isShow ? "text" : "password"}
+
+                                                                    onFocus={() => setLastFocus(true)}
+                                                                    onBlur={() => setLastFocus(false)}
+                                                                ></Input>
+                                                            </InputGroup>
+                                                            <InputGroup
+                                                                className={
+                                                                    "no-border input-lg" +
+                                                                    (lastFocus ? " input-group-focus" : "")
+                                                                }
+                                                            >
+                                                                <InputGroupAddon addonType="prepend" style={{
+                                                                    cursor: 'pointer',
+                                                                }}
+                                                                    onClick={() => {
+                                                                        setIsShow(!isShow)
+                                                                    }}
+                                                                >
+                                                                    <InputGroupText>
+                                                                        <i className="now-ui-icons ui-1_lock-circle-open"></i>
+                                                                    </InputGroupText>
+                                                                </InputGroupAddon>
+                                                                <Input
+                                                                    placeholder="Nhập lại mật khẩu..."
+                                                                    type={isShow ? "text" : "password"}
+                                                                    onFocus={() => setLastFocus(true)}
+                                                                    onBlur={() => setLastFocus(false)}
+                                                                ></Input>
+                                                            </InputGroup>
+                                                        </CardBody>
+                                                    ) :
+                                                    (
+                                                        <CardBody  >
+                                                            <InputGroup
+                                                                className={
+                                                                    "no-border input-lg" +
+                                                                    (firstFocus ? " input-group-focus" : "")
+                                                                }
+                                                            >
+                                                                <InputGroupAddon addonType="prepend">
+                                                                    <InputGroupText>
+                                                                        <i className="now-ui-icons ui-1_email-85"></i>
+                                                                    </InputGroupText>
+                                                                </InputGroupAddon>
+                                                                <Input
+                                                                    placeholder="Nhập địa chỉ email..."
+                                                                    type="email"
+                                                                    onFocus={() => setFirstFocus(true)}
+                                                                    onBlur={() => setFirstFocus(false)}
+                                                                ></Input>
+                                                            </InputGroup>
+                                                        </CardBody>
+                                                    )
+                                        }
                                         <CardFooter className="text-center">
                                             <Button
                                                 block
@@ -114,12 +214,25 @@ function LoginPage() {
                                                 color="primary"
                                                 href="#pablo"
                                                 onClick={(e) => {
-                                                    // xử lý đăng nhập
+                                                    if (formState === "login") {
+                                                        // xử lý đăng nhập
+                                                    }
+                                                    else if (formState === "register") {
+                                                        // xử lý đăng ký
+                                                    }
+                                                    else if (formState === "forgot") {
+                                                        // xử lý quên mật khẩu
+                                                    }
+
                                                 }}
                                                 size="lg"
                                             >
                                                 <i class="now-ui-icons arrows-1_share-66 mr-2"></i>
-                                                Đăng nhập
+                                                {
+                                                    formState === "login" ? "Đăng nhập" :
+                                                        formState === "register" ? "Đăng ký" :
+                                                            "Gửi"
+                                                }
                                             </Button>
                                         </CardFooter>
                                         <div className="pull-left">
@@ -127,9 +240,17 @@ function LoginPage() {
                                                 <a
                                                     className="link footer-link"
                                                     href="#pablo"
-                                                    onClick={(e) => e.preventDefault()}
+                                                    onClick={(e) => {
+                                                        if (formState === "login")
+                                                            setFormState("register");
+                                                        else
+                                                            setFormState("login");
+                                                        e.preventDefault();
+                                                    }}
                                                 >
-                                                    Tạo tài khoản
+                                                    {
+                                                        formState === "register" ? "Đăng nhập" : "Tạo tài khoản"
+                                                    }
                                                 </a>
                                             </h6>
                                         </div>
@@ -138,9 +259,17 @@ function LoginPage() {
                                                 <a
                                                     className="link footer-link"
                                                     href="#pablo"
-                                                    onClick={(e) => e.preventDefault()}
+                                                    onClick={(e) => {
+                                                        if (formState === "login" || formState === "register")
+                                                            setFormState('forgot');
+                                                        else
+                                                            setFormState("login");
+                                                        e.preventDefault();
+                                                    }}
                                                 >
-                                                    Quên mật khẩu ?
+                                                    {
+                                                        formState === "login" || formState === "register" ? "Quên mật khẩu ?" : "Đăng nhập"
+                                                    }
                                                 </a>
                                             </h6>
                                         </div>

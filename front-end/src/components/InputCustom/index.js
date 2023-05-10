@@ -24,7 +24,7 @@ function InputCustom({
                         className={classNames(labelClassName, "col-form-label")}
                     >
                         {title}
-                        {isRequired && <span style={{ color: 'red' }} >*</span>}
+                        {isRequired && <span style={{ color: 'red' }} >&nbsp;*</span>}
                     </label>
                 </div>
                 <div className={classNames(wrapInputClassName)}
@@ -64,7 +64,7 @@ function InputCustom({
                 className={classNames(labelClassName, "col-form-label")}
             >
                 {title}
-                {isRequired && <span style={{ color: 'red' }} >*</span>}
+                {isRequired && <span style={{ color: 'red' }} >&nbsp;*</span>}
             </label>
             <div className={classNames(wrapInputClassName)}
                 style={{ flexGrow: !labelClassName && !wrapInputClassName ? 1 : undefined }}

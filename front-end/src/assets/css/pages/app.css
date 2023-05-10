@@ -18,3 +18,9 @@
     font-size: 20px;
     font-weight: bold;
 }
+.padding-cell-table td{
+    padding: 8px;
+}
+.padding-cell-table thead td{
+    font-weight: bold;
+}
