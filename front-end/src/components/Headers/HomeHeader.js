@@ -5,7 +5,7 @@ import { Row, Col } from "reactstrap";
 
 // core components
 
-function HomeHeader() {
+function HomeHeader({ setIsOpenModal }) {
   let pageHeader = React.createRef();
   React.useEffect(() => {
     if (window.innerWidth > 991) {
@@ -61,7 +61,13 @@ function HomeHeader() {
                 </form>
                 <Row className="btn-search">
                   <Col md={12} className="">
-                    <button class="btn btn-success btn-lg btn-round my-0 pull-center" type="button">
+                    <button class="btn btn-success btn-lg btn-round my-0 pull-center" type="button"
+                      onClick={() => {
+                        if (!!setIsOpenModal) {
+                          setIsOpenModal(true);
+                        }
+                      }}
+                    >
                       <i class="now-ui-icons ui-1_zoom-bold "  ></i> Tra cứu
                     </button>
                   </Col>

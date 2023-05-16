@@ -81,7 +81,7 @@ function UserInfo() {
                     />
                     <Button
                         color="success"
-                        className="btn-lg"
+                        className="btn-lg mt-4"
                     >
                         <div className="d-flex align-items-center" >
                             <span className="mr-2">Lưu lại</span>
@@ -91,41 +91,44 @@ function UserInfo() {
                 </Col>
                 <Col md={12}>
                     <h5 className="text-icon pt-2 mt-2" style={{ borderTop: "1px solid #eee" }}>
-                        <i class="now-ui-icons users_single-02"></i>
+                        <i class="now-ui-icons objects_key-25"></i>
                         <span>Đổi mật khẩu</span>
                     </h5>
                 </Col>
-                <Col xs={6}  md={3}>
-                    <InputCustom 
-                        title = "Mật khẩu cũ"
-                        type = "password"
-                        isRequired = {true}
-                        placeholder = "Nhập mật khẩu cũ"
-                        labelClassName = ""
-                        wrapInputClassName = ""
+                <Col xs={6} md={3}>
+                    <InputCustom
+                        title="Mật khẩu cũ"
+                        type="password"
+                        isRequired={true}
+                        placeholder="Nhập mật khẩu cũ"
+                        labelClassName=""
+                        wrapInputClassName=""
                         row={false}
                     />
-                    <InputCustom 
-                        title = "Mật khẩu mới"
-                        type = "password"
-                        isRequired = {true}
-                        placeholder = "Nhập mật khẩu mới"
-                        labelClassName = ""
-                        wrapInputClassName = ""
+                    <InputCustom
+                        title="Mật khẩu mới"
+                        type="password"
+                        isRequired={true}
+                        placeholder="Nhập mật khẩu mới"
+                        labelClassName=""
+                        wrapInputClassName=""
                         row={false}
                     />
-                    <InputCustom 
-                        title = "Nhập lại mật khẩu mới"
-                        type = "password"
-                        isRequired = {true}
-                        placeholder = "Nhập lại mật khẩu mới"
-                        labelClassName = ""
-                        wrapInputClassName = ""
+                    <InputCustom
+                        title="Nhập lại mật khẩu mới"
+                        type="password"
+                        isRequired={true}
+                        placeholder="Nhập lại mật khẩu mới"
+                        labelClassName=""
+                        wrapInputClassName=""
                         row={false}
                     />
                 </Col>
                 <Col md={12}>
-                    <button className="btn btn-large btn-success" >Đổi mật khẩu</button>
+                    <button className="btn btn-lg btn-success text-icon" >
+                        <i class="now-ui-icons arrows-1_refresh-69"></i>
+                        <span>Đổi mật khẩu</span>
+                    </button>
                 </Col>
             </Row>
         </div>);

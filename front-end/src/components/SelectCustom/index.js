@@ -1,11 +1,18 @@
 import React, { useEffect, useRef } from "react";
-import Select, { components } from 'react-select'
+import Select, { components } from 'react-select';
+import 'assets/css/components/react-select.css';
 function SelectCustom({
     options,
     label = "",
-    value,
+    subLabel = "",
+    labelWidth = 120,
+    maxWidth,
+    row = false,
     type = "",
-    placeholder = false
+    placeholder = false,
+    isRequired = false,
+    onChange = () => {},
+    value = null
 }) {
     const DropdownIndicator = props => {
         return (
@@ -22,22 +29,48 @@ function SelectCustom({
                 className="react-select-container"
                 classNamePrefix="react-select"
                 components={{ IndicatorSeparator: () => { }, DropdownIndicator }}
-                placeholder={placeholder || "Nhập để tìm kiếm..."}
+                placeholder={"Nhập để tìm kiếm..."}
             />
         );
     return (
-        <div>
+        <div className="form-group"
+            style={{
+                display: row ? "flex" : undefined,
+            }}
+        >
             {
                 !!label && (
-                    <h5 className="mb-0">
-                        <label>{label}</label>
-                    </h5>
+                    <label className="mb-0 select-label"
+                        style={{
+                            minWidth: row ? labelWidth : undefined
+                        }}
+                    >{label}
+                        {
+                            isRequired && (<span style={{ color: 'red' }} >&nbsp;*</span>)
+                        }
+                        {
+                            !!subLabel && (<span style={{ fontSize: 12, fontStyle: 'italic' }} >&nbsp;({subLabel})</span>)
+                        }
+                    </label>
                 )
             }
             <Select
                 options={options}
                 value={value ?? null}
                 placeholder={placeholder}
+                className="react-select-container custom-react-select"
+                classNamePrefix="react-select"
+                onChange={onChange}
+                styles={{
+                    container : (baseStyles,state) => {
+                        return {
+                            ...baseStyles,
+                            flex: 1,
+                            minWidth: 120,
+                            maxWidth: !!maxWidth ? maxWidth : undefined
+                        }
+                    }
+                }}
             />
         </div>
     )

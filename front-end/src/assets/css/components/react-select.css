@@ -1,0 +1,8 @@
+.custom-react-select .react-select__value-container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.select-label {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}

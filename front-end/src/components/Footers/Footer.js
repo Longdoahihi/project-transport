@@ -39,7 +39,7 @@ function Footer() {
               </li>
             </ul> */}
           </div>
-          <div className="copyright" id="copyright">
+          {/* <div className="copyright" id="copyright">
             © {new Date().getFullYear()}, Thiết kế{" "}
             và triển khai bởi{" "}
             <a
@@ -49,7 +49,7 @@ function Footer() {
               HTTT02 [ NCKH-2023 ]
             </a>
             .
-          </div>
+          </div> */}
         </Container>
       </footer>
     </>

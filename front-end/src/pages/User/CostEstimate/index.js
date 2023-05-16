@@ -5,15 +5,14 @@ import { Button, Card, CardBody, Col, Row } from 'reactstrap';
 function CostEstimate() {
     return (
         <>
-            <h1>Uớc tính cước phí</h1>
             <Row>
                 <Col xs={6}>
                     <Row>
                         <Col md={12}>
-                            <h4 className='head1 text-icon' >
+                            <h5 className='text-icon' >
                                 <img src={UserSVG} alt='...' />
                                 <span>Người gửi</span>
-                            </h4>
+                            </h5>
                         </Col>
                         <Col md={12}>
                             <SelectCustom
@@ -39,10 +38,10 @@ function CostEstimate() {
                 <Col xs={6}>
                     <Row>
                         <Col md={12}>
-                            <h4 className='head1 text-icon' >
+                            <h5 className='text-icon' >
                                 <img src={UserSVG} alt='...' />
                                 <span>Người nhận</span>
-                            </h4>
+                            </h5>
                         </Col>
                         <Col md={12}>
                             <SelectCustom
@@ -65,12 +64,13 @@ function CostEstimate() {
                     </Row>
                 </Col>
             </Row>
+            <hr  />
             <Row>
                 <Col md={12}>
-                    <h4 className='head1 text-icon' >
+                    <h5 className='text-icon' >
                         <img src={UserSVG} alt='...' />
                         <span>Thông tin bưu phẩm</span>
-                    </h4>
+                    </h5>
                 </Col>
                 <Col md={6}>
                     <InputCustom
@@ -94,19 +94,29 @@ function CostEstimate() {
                     <Button 
                         color='success'
                         title='Tra cứu'
-                        className='btn-lg'
+                        className='btn-lg text-icon'
                     >
-                        Tra cứu
+                        <i class="now-ui-icons ui-1_zoom-bold"></i>
+                        <span>Tra cứu</span>
                     </Button>
                 </Col>
             </Row>
             <Row>
-                <Col md={12}>
-                    <Card>
-                        <CardBody>
-                            <h5>Dịch vụ của chúng tôi</h5>
-                        </CardBody>
-                    </Card>
+                <Col md={6}>
+                    <table border={1} width={"100%"} className='padding-cell-table' >
+                        <thead>
+                            <tr>
+                                <td>Tên dịch vụ</td>
+                                <td>Tiền cước</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Chuyển phát tiết kiệm</td>
+                                <td>120.000 VNĐ</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </Col>
             </Row>
         </>

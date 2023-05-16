@@ -29,55 +29,12 @@ import {
 import Select from 'react-select'
 
 // core components
-import FooterBlack from "components/Footers/FooterBlack.js";
-import HomeHeader from "components/Headers/HomeHeader";
 import ScrollTransparentNavbar from "components/Navbars/ScrollTransparentNavbar";
 import 'assets/css/pages/home-page/index.css'
-import classNames from "classnames";
-import InputCustom from "components/InputCustom";
-import SelectCustom from "components/SelectCustom";
 import IntroHeader from "components/Headers/IntroduceHeader";
-import Testimonials from "views/presentation-sections/Testimonials";
-import CarouselSection from "views/index-sections/Carousel";
-const items = [
-    {
-        src: require("assets/img/bg1.jpg"),
-        altText: "",
-        caption: "Nature, United States"
-    },
-    {
-        src: require("assets/img/bg3.jpg"),
-        altText: "",
-        caption: "Somewhere Beyond, United States"
-    },
-    {
-        src: require("assets/img/bg4.jpg"),
-        altText: "",
-        caption: "Yellowstone National Park, United States"
-    }]
+import CustomFooter from "components/CustomFooter";
+
 function IntroPage() {
-    const [activeIndex, setActiveIndex] = React.useState(0);
-    const [animating, setAnimating] = React.useState(false);
-    const onExiting = () => {
-        setAnimating(true);
-    };
-    const onExited = () => {
-        setAnimating(false);
-    };
-    const next = () => {
-        if (animating) return;
-        const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-        setActiveIndex(nextIndex);
-    };
-    const previous = () => {
-        if (animating) return;
-        const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-        setActiveIndex(nextIndex);
-    };
-    const goToIndex = (newIndex) => {
-        if (animating) return;
-        setActiveIndex(newIndex);
-    };
     return (
         <>
             <ScrollTransparentNavbar />
@@ -94,7 +51,7 @@ function IntroPage() {
                                 <Row>
                                     <Col xs={12} md={5}>
                                         <img
-                                            src={require('assets/img/bg17.jpg')}
+                                            src={require('assets/img/gioi-thieu/gt5.png')}
                                             alt="Hình ảnh"
                                         />
                                     </Col>
@@ -132,16 +89,16 @@ function IntroPage() {
                                                     <img
                                                         alt="..."
                                                         className="img rounded"
-                                                        src={require("assets/img/card-blog2.jpg")}
+                                                        src={require("assets/img/gioi-thieu/gt1.jpg")}
                                                     ></img>
                                                 </a>
                                             </div>
                                             <CardBody>
                                                 <CardTitle tag="h5" className="font-weight-bold text-center text-uppercase  ">
-                                                    Viettel Post là gì?
+                                                    MienBac Transport là gì?
                                                 </CardTitle>
                                                 <p className="h5" >
-                                                    Viettel Post – Tổng Công ty Cổ phần Bưu Chính Viettel là đơn vị thành viên của Tập đoàn Công nghiệp Viễn thông Quân đội Viettel, với 24 năm xây dựng và phát triển cùng nhiều danh hiệu,.....
+                                                    MienBac Transport – Tổng Công ty Cổ phần Bưu Chính MienBac Transport là đơn vị thành viên của Tập đoàn Công nghiệp Viễn thông Quân đội MienBac Transport, với 24 năm xây dựng và phát triển cùng nhiều danh hiệu,.....
                                                 </p>
                                                 <CardFooter>
                                                     <Button className="btn-sm float-right" >
@@ -158,7 +115,7 @@ function IntroPage() {
                                                     <img
                                                         alt="..."
                                                         className="img rounded"
-                                                        src={require("assets/img/card-blog2.jpg")}
+                                                        src={require("assets/img/gioi-thieu/gt1.jpg")}
                                                     ></img>
                                                 </a>
                                             </div>
@@ -167,7 +124,7 @@ function IntroPage() {
                                                     TẦM NHÌN
                                                 </CardTitle>
                                                 <p className="h5" >
-                                                    Trở thành Công ty Logistics công nghệ cao, nằm trong nhóm 5 doanh nghiệp hàng đầu tại Việt Nam vào năm 2025.Chiến lược của Viettel Post vẫn là phát triển kinh doanh đa dịch vụ, đưa dịch vụ đến gần khách hàng đối với cả thị trường trong nước và quốc tế, đồng thời luôn khẳng định là một doanh nghiệp hoàn thành tốt nghĩa vụ đối với cộng đồng......
+                                                    Trở thành Công ty Logistics công nghệ cao, nằm trong nhóm 5 doanh nghiệp hàng đầu tại Việt Nam vào năm 2025.Chiến lược của MienBac Transport vẫn là phát triển kinh doanh đa dịch vụ, đưa dịch vụ đến gần khách hàng đối với cả thị trường trong nước và quốc tế, đồng thời luôn khẳng định là một doanh nghiệp hoàn thành tốt nghĩa vụ đối với cộng đồng......
                                                 </p>
                                                 <CardFooter>
                                                     <Button className="btn-sm float-right" >
@@ -184,16 +141,16 @@ function IntroPage() {
                                                     <img
                                                         alt="..."
                                                         className="img rounded"
-                                                        src={require("assets/img/card-blog2.jpg")}
+                                                        src={require("assets/img/gioi-thieu/gt1.jpg")}
                                                     ></img>
                                                 </a>
                                             </div>
                                             <CardBody>
                                                 <CardTitle tag="h5" className="font-weight-bold text-center text-uppercase  ">
-                                                    SỨ MỆNH VIETTELPOST
+                                                    SỨ MỆNH MIENBAC TRANSPORT
                                                 </CardTitle>
                                                 <p className="h5" >
-                                                    Không ngừng sáng tạo cách thức cung cấp dịch vụ, nâng cao tiêu chuẩn chất lượng, khai thác tối đa nguồn lực dựa trên nền tảng số đảm bảo cung cấp đầy đủ dịch vụ Logistics với hiệu quả cao nhất cho toàn xã hộiSong song với việc không ngừng nâng cao chất lượng đội ngũ nhân lực, mở rộng mạng lưới. Trong suốt những năm qua, Viettel Post luôn kiên trì với triết lý phục vụ khách hàng của mình:
+                                                    Không ngừng sáng tạo cách thức cung cấp dịch vụ, nâng cao tiêu chuẩn chất lượng, khai thác tối đa nguồn lực dựa trên nền tảng số đảm bảo cung cấp đầy đủ dịch vụ Logistics với hiệu quả cao nhất cho toàn xã hộiSong song với việc không ngừng nâng cao chất lượng đội ngũ nhân lực, mở rộng mạng lưới. Trong suốt những năm qua, MienBac Transport luôn kiên trì với triết lý phục vụ khách hàng của mình:
                                                     1. LẤY KHÁCH HÀNG LÀM TRUNG TÂM:
                                                     2. KINH DOANH BẰNG SỰ TỬ TẾ:+ Tư duy quản trị tử tế.+ Sản phẩm và dị......
                                                 </p>
@@ -214,7 +171,7 @@ function IntroPage() {
                     <Card className="card-no-shadow">
                         <CardTitle className="text-center">
                             <h4 className="font-weight-bold mb-0 text-uppercase" >Hình ảnh về công ty</h4>
-                            <h5>TỔNG CÔNG TY CỔ PHẦN BƯU CHÍNH VIETTEL</h5>
+                            <h5>TỔNG CÔNG TY CỔ PHẦN BƯU CHÍNH MIENBAC TRANSPORT</h5>
                         </CardTitle>
                         <CardBody>
                             <Row>
@@ -222,36 +179,53 @@ function IntroPage() {
                                     <img
                                         alt="..."
                                         className="rounded-circle"
-                                        src={require("assets/img/julie.jpg")}
+                                        src={require("assets/img/gioi-thieu/gt2.jpg")}
+                                        style={{
+                                            width: 200,
+                                            height: 200
+                                        }}
                                     ></img>
                                 </Col>
                                 <Col md={3}>
                                     <img
                                         alt="..."
                                         className="rounded-circle"
-                                        src={require("assets/img/julie.jpg")}
+                                        src={require("assets/img/gioi-thieu/gt3.jpg")}
+                                        style={{
+                                            width: 200,
+                                            height: 200
+                                        }}
                                     ></img>
                                 </Col>
                                 <Col md={3}>
                                     <img
                                         alt="..."
                                         className="rounded-circle"
-                                        src={require("assets/img/julie.jpg")}
+                                        src={require("assets/img/gioi-thieu/gt4.jpg")}
+                                        style={{
+                                            width: 200,
+                                            height: 200
+                                        }}
                                     ></img>
                                 </Col>
                                 <Col md={3}>
                                     <img
                                         alt="..."
                                         className="rounded-circle"
-                                        src={require("assets/img/julie.jpg")}
+                                        src={require("assets/img/gioi-thieu/gt2.jpg")}
+                                        style={{
+                                            width: 200,
+                                            height: 200
+                                        }}
                                     ></img>
                                 </Col>
                             </Row>
-                            <p className="text-center">Viettel Post là một đơn vị thành viên của Tập đoàn Công nghiệp Viễn thông Quân đội Viettel chuyên kinh doanh các dịch vụ Chuyển phát nhanh trong nước và quốc tế; Dịch vụ Logistics; Dịch vụ Fulfillment; Dịch vụ Thương mại;...</p>
+                            <p className="text-center mt-3">MienBac Transport là một đơn vị thành viên của Tập đoàn Công nghiệp Viễn thông Quân đội MienBac Transport chuyên kinh doanh các dịch vụ Chuyển phát nhanh trong nước và quốc tế; Dịch vụ Logistics; Dịch vụ Fulfillment; Dịch vụ Thương mại;...</p>
                         </CardBody>
                     </Card>
                 </Container>
             </div>
+            <CustomFooter />
         </>
     );
 }

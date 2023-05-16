@@ -25,11 +25,6 @@ function ScrollTransparentNavbar({ isOpenNavbar = false }) {
       ? ""
       : " navbar-transparent"
   );
-  // const [buyButtonColor, setBuyButtonColor] = React.useState(
-  //   (document.documentElement.scrollTop > 499 || document.body.scrollTop) > 499
-  //     ? "info"
-  //     : "neutral"
-  // );
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
@@ -86,33 +81,41 @@ function ScrollTransparentNavbar({ isOpenNavbar = false }) {
           >
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink
-                  href="/news"
-                >
-                  <p>Tin tức</p>
+                <NavLink>
+                  <Link
+                    to={"/news"}
+                  >
+                    <p>Tin tức</p>
+                  </Link>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink
-                  href="/introduction"
-                >
-                  <p>Giới thiệu</p>
+                <NavLink>
+                  <Link
+                    to="/introduction"
+                  >
+                    <p>Giới thiệu</p>
+                  </Link>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink
-                  href="/contact"
-                >
-                  <p>Liên hệ</p>
+                <NavLink>
+                  <Link
+                    to="/contact"
+                  >
+                    <p>Liên hệ</p>
+                  </Link>
                 </NavLink>
               </NavItem>
 
               <NavItem>
-                <NavLink
-                  href="/login-page"
-                >
-                  <i class="now-ui-icons business_globe"></i>
-                  <p>Đăng nhập</p>
+                <NavLink>
+                  <Link
+                    to="/login-page"
+                  >
+                    <i class="now-ui-icons business_globe"></i>
+                    <p>Đăng nhập / Đăng ký</p>
+                  </Link>
                 </NavLink>
               </NavItem>
             </Nav>
