@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 // reactstrap components
 import {
     TabContent,
@@ -16,12 +15,10 @@ import {
 } from "reactstrap";
 import 'assets/css/pages/sidebar/index.css'
 import CUOrder from "pages/User/components/CUOrder";
-import ROrder from "pages/User/components/ROrder";
 import Order from "pages/User/components/Order";
 import CostEstimate from "pages/User/CostEstimate";
 import PostOffice from "pages/User/PostOffice";
 import UserInfo from "pages/User/UserInfo";
-import ChangePassword from "pages/User/ChangePassword";
 import UDelivery from "pages/User/UDelivery";
 function SideBar() {
     const [verticalTabs, setVerticalTabs] = React.useState("1");
@@ -123,7 +120,7 @@ function SideBar() {
                                                 </div>
                                             </NavLink>
                                         </NavItem>
-                                        {/* <NavItem style={{
+                                        <NavItem style={{
                                             borderRadius: '0px'
                                         }}>
                                             <NavLink
@@ -148,7 +145,7 @@ function SideBar() {
                                                     <span className="nav-item-text">Quản lý phiếu nhập/xuất</span>
                                                 </div>
                                             </NavLink>
-                                        </NavItem> */}
+                                        </NavItem>
                                         <div
                                             aria-multiselectable={true}
                                             className="card-collapse"
@@ -329,13 +326,13 @@ function SideBar() {
                                         <div style={{ display: 'flex', alignItems: 'center' }}>
                                             <img
                                                 alt="avatar"
-                                                src={require("assets/img/usher.jpg")}
                                                 style={{
                                                     width: 40,
                                                     height: 40,
                                                     borderRadius: '50%',
                                                     marginRight: 12
                                                 }}
+                                                src={require("assets/img/user.png")}
                                             />
                                             <div
                                                 style={{

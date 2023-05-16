@@ -9,7 +9,8 @@ function InputCustom({
     labelClassName = "",
     wrapInputClassName = "",
     row = true,
-    disabled = false
+    disabled = false,
+    styleLabel = {}
 }) {
     if (!row) {
         return (
@@ -19,7 +20,8 @@ function InputCustom({
                 <div>
                     <label
                         style={{
-                            minWidth: labelWidth ?? undefined
+                            minWidth: labelWidth ?? undefined,
+                            ...styleLabel
                         }}
                         className={classNames(labelClassName, "col-form-label")}
                     >

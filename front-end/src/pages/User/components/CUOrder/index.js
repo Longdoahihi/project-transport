@@ -101,7 +101,7 @@ function CUOrder() {
                             <Row>
                                 <Col md={4}>
                                     <InputCustom
-                                        title="Số lượng"
+                                        title="Chiều dài (cm)"
                                         type="number"
                                         isRequired={true}
                                         labelWidth={120}
@@ -112,7 +112,7 @@ function CUOrder() {
                                 </Col>
                                 <Col md={4}>
                                     <InputCustom
-                                        title="Trọng lượng (kg)"
+                                        title="Chiều rộng (cm)"
                                         type="number"
                                         isRequired={true}
                                         labelWidth={140}
@@ -123,7 +123,7 @@ function CUOrder() {
                                 </Col>
                                 <Col md={4}>
                                     <InputCustom
-                                        title="Giá trị (VND)"
+                                        title="Chiều cao (cm)"
                                         type="number"
                                         isRequired={true}
                                         labelWidth={120}

@@ -113,6 +113,9 @@ function IntroHeader() {
                         paddingLeft: 72,
                         paddingRight: 72,
                       }}
+                      onClick={()=>{
+                        window.alert("Cảm ơn phản hồi của bạn về chúng tôi! Chúng tôi sẽ liên hệ với bạn ngay khi có thể!")
+                      }}
                     >
                       <i class="now-ui-icons ui-1_send mr-2 "></i>
                       Gửi

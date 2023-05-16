@@ -24,3 +24,9 @@
 .padding-cell-table thead td{
     font-weight: bold;
 }
+input.timelineActive{
+    accent-color: green;
+}
+input.timeline{
+    accent-color: gray;
+}

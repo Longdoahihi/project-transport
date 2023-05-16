@@ -8,10 +8,11 @@ function SelectCustom({
     labelWidth = 120,
     maxWidth,
     row = false,
-    value,
     type = "",
     placeholder = false,
-    isRequired = false
+    isRequired = false,
+    onChange = () => {},
+    value = null
 }) {
     const DropdownIndicator = props => {
         return (
@@ -28,7 +29,7 @@ function SelectCustom({
                 className="react-select-container"
                 classNamePrefix="react-select"
                 components={{ IndicatorSeparator: () => { }, DropdownIndicator }}
-                placeholder={placeholder || "Nhập để tìm kiếm..."}
+                placeholder={"Nhập để tìm kiếm..."}
             />
         );
     return (
@@ -59,6 +60,7 @@ function SelectCustom({
                 placeholder={placeholder}
                 className="react-select-container custom-react-select"
                 classNamePrefix="react-select"
+                onChange={onChange}
                 styles={{
                     container : (baseStyles,state) => {
                         return {

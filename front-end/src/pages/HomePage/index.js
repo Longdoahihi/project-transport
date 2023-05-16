@@ -1,7 +1,7 @@
 /**
  * Trang chủ
  */
-import React from "react";
+import React, { useState } from "react";
 
 // reactstrap components
 import {
@@ -17,6 +17,9 @@ import {
     TabContent,
     TabPane,
     CardBody,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
 } from "reactstrap";
 import Select from 'react-select'
 
@@ -29,20 +32,227 @@ import classNames from "classnames";
 import InputCustom from "components/InputCustom";
 import SelectCustom from "components/SelectCustom";
 import CustomFooter from "components/CustomFooter";
+import CustomModal from "components/CustomModal";
+
 function HomePage() {
-    const [horizontalTabs, setHorizontalTabs] = React.useState("1");
-    const [verticalTabs, setVerticalTabs] = React.useState("1");
     const [iconHorizontalTabs, setIconHorizontalTabs] = React.useState("1");
-    const [iconVerticalTabs, setIconVerticalTabs] = React.useState("1");
-    const [justIconHorizontalTabs, setJustIconHorizontalTabs] = React.useState(
-        "1"
-    );
-    const [justIconVerticalTabs, setJustIconVerticalTabs] = React.useState("1");
+    const [isOpenModal, setIsOpenModal] = useState(false);
+    //input value
+    const [provinceFromValue, setProvinceFromValue] = useState({label: "",value: ""});
+    const [provinceToValue, setProvinceToValue] = useState(null);
+    const [districFromValue, setDistrictFromValue] = useState(null);
+    const [districToValue, setDistrictToValue] = useState(null);
+    const [weight, setWeight] = useState("");
+    const [collectionMoney, setCollectionMoney] = useState("");
     return (
         <>
+            <CustomModal
+                isOpen={isOpenModal}
+                toggle={() => { setIsOpenModal(!isOpenModal) }}
+                component={(
+                    <>
+                        <ModalHeader>
+                            <h5 class="modal-title text-uppercase ">THÔNG TIN TRẠNG THÁI</h5>
+                            <button type="button" class="close">
+                                <i class="now-ui-icons ui-1_simple-remove"></i>
+                            </button>
+                        </ModalHeader>
+                        <ModalBody>
+                            <Row>
+                                <Col md={4} className="pr-4" style={{
+                                    borderRight: '2px solid #eee'
+                                }}>
+                                    <div className="my-1" >
+                                        <span>Mã phiếu gửi:</span>
+                                        <span className="pull-right font-weight-bold">17144578067</span>
+                                    </div>
+                                    <div className="my-1">
+                                        <span>Địa chỉ gửi:</span>
+                                        <span className="pull-right font-weight-bold">T.Thái Nguyên - H.Võ Nhai</span>
+                                    </div>
+                                    <div className="my-1">
+                                        <span>Địa chỉ người nhận:</span>
+                                        <span className="pull-right font-weight-bold">TP.Cần Thơ - H.Phong</span>
+                                    </div>
+                                </Col>
+                                <Col md={4} className="pr-4" style={{
+                                    borderRight: '2px solid #eee'
+                                }}>
+                                    <div className="my-1">
+                                        <span>Khối lượng(Gram):</span>
+                                        <span className="pull-right font-weight-bold">1500</span>
+                                    </div>
+                                    <div className="my-1">
+                                        <span>Dịch vụ:</span>
+                                        <span className="pull-right font-weight-bold">Chuyển phát tiết kiệm hàng hóa</span>
+                                    </div>
+                                    <div className="my-1">
+                                        <span>Trạng thái:</span>
+                                        <span className="pull-right font-weight-bold">Giao thành công</span>
+                                    </div>
+                                </Col>
+                                <Col md={4} className="pr-4">
+                                    <div className="my-1">
+                                        <span>Ngày tạo:</span>
+                                        <span className="pull-right font-weight-bold">20/12/2022</span>
+                                    </div>
+                                    <div className="my-1">
+                                        <span>Ngày nhận hàng:</span>
+                                        <span className="pull-right font-weight-bold">20/12/2022</span>
+                                    </div>
+                                    <div className="my-1">
+                                        <span>Ngày giao hàng dự kiến:</span>
+                                        <span className="pull-right font-weight-bold">24/12/2022</span>
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row style={{
+                                maxHeight: '300px',
+                                overflowY: 'scroll',
+                                marginTop: 16
+                            }} >
+                                <Col md={12} className="d-flex">
+                                    <div
+                                        style={{
+                                            marginRight: 16,
+                                            width: "3px",
+                                            backgroundColor: '#eee',
+                                            height: '100%',
+                                            position: "relative"
+                                        }}
+                                    >
+                                        <input type="radio"
+                                            style={{
+                                                position: 'absolute',
+                                                top: 0,
+                                                right: "-170%"
+                                            }}
+                                            checked={true}
+                                            className="timelineActive"
+                                            value={"timelineActive"}
+                                        />
+                                    </div>
+                                    <div>
+                                        <h6 style={{ color: "green" }} >Giao hàng thành công</h6>
+                                        <div >Nhận tại Trung tâm khai thác - Q.Bình Thủy - TP.Cần Thơ</div>
+                                        <div >23/12/2022 07:13:04</div>
+                                    </div>
+                                </Col>
+                                <Col md={12} className="d-flex">
+                                    <div
+                                        style={{
+                                            marginRight: 16,
+                                            width: "3px",
+                                            backgroundColor: '#eee',
+                                            height: '100%',
+                                            position: "relative"
+                                        }}
+                                    >
+                                        <input type="radio"
+                                            style={{
+                                                position: 'absolute',
+                                                top: 16,
+                                                right: "-170%"
+                                            }}
+                                            checked={true}
+                                            className="timeline"
+                                        />
+                                    </div>
+                                    <div className="pt-3">
+                                        <h6 style={{ color: "green" }} >Giao hàng</h6>
+                                        <div >Bưu cục Võ Nhai - TNN - T.Thái Nguyên đến Đội vận chuyển</div>
+                                        <div >20/12/2022 16:59:11</div>
+                                    </div>
+                                </Col>
+                                <Col md={12} className="d-flex">
+                                    <div
+                                        style={{
+                                            marginRight: 16,
+                                            width: "3px",
+                                            backgroundColor: '#eee',
+                                            height: '100%',
+                                            position: "relative"
+                                        }}
+                                    >
+                                        <input type="radio"
+                                            style={{
+                                                position: 'absolute',
+                                                top: 16,
+                                                right: "-170%"
+                                            }}
+                                            checked={true}
+                                            className="timeline"
+                                        />
+                                    </div>
+                                    <div className="pt-3">
+                                        <h6 style={{ color: "green" }} >Giao hàng thành công</h6>
+                                        <div >Nhận tại Trung tâm khai thác - Q.Bình Thủy - TP.Cần Thơ</div>
+                                        <div >23/12/2022 07:13:04</div>
+                                    </div>
+                                </Col>
+                                <Col md={12} className="d-flex">
+                                    <div
+                                        style={{
+                                            marginRight: 16,
+                                            width: "3px",
+                                            backgroundColor: '#eee',
+                                            height: '100%',
+                                            position: "relative"
+                                        }}
+                                    >
+                                        <input type="radio"
+                                            style={{
+                                                position: 'absolute',
+                                                top: 16,
+                                                right: "-170%"
+                                            }}
+                                            checked={true}
+                                            className="timeline"
+                                        />
+                                    </div>
+                                    <div className="pt-3">
+                                        <h6 style={{ color: "green" }} >Giao hàng thành công</h6>
+                                        <div >Nhận tại Trung tâm khai thác - Q.Bình Thủy - TP.Cần Thơ</div>
+                                        <div >23/12/2022 07:13:04</div>
+                                    </div>
+                                </Col>
+                                <Col md={12} className="d-flex">
+                                    <div
+                                        style={{
+                                            marginRight: 16,
+                                            width: "3px",
+                                            backgroundColor: '#eee',
+                                            height: '100%',
+                                            position: "relative"
+                                        }}
+                                    >
+                                        <input type="radio"
+                                            style={{
+                                                position: 'absolute',
+                                                top: 16,
+                                                right: "-170%"
+                                            }}
+                                            checked={true}
+                                            className="timeline"
+                                        />
+                                    </div>
+                                    <div className="pt-3">
+                                        <h6 style={{ color: "green" }} >Giao hàng thành công</h6>
+                                        <div >Nhận tại Trung tâm khai thác - Q.Bình Thủy - TP.Cần Thơ</div>
+                                        <div >23/12/2022 07:13:04</div>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </ModalBody>
+                        <ModalFooter></ModalFooter>
+                    </>
+                )}
+            />
             <ScrollTransparentNavbar />
             <div className="wrapper">
-                <HomeHeader />
+                <HomeHeader
+                    setIsOpenModal={setIsOpenModal}
+                />
                 <div className="section">
                     <Container  >
                         <Card>
@@ -81,7 +291,7 @@ function HomePage() {
                                 </NavItem>
                             </Nav>
                             <TabContent
-                                className="tab-space"
+                                className="tab-space pb-3"
                                 activeTab={"iconHorizontalTabs" + iconHorizontalTabs}
                             >
                                 <TabPane tabId="iconHorizontalTabs1" >
@@ -94,20 +304,18 @@ function HomePage() {
                                                         <div className=" col-md-9">
                                                             <Select
                                                                 className="react-select react-select-info mt-2 rounded-0"
-                                                                onChange={(value) => { }}
                                                                 classNamePrefix="react-select"
-                                                                placeholder="Single Select"
-                                                                value={{ label: "", value: "" }}
-                                                                name=""
+                                                                value={provinceFromValue}
+                                                                placeholder={"Chọn tỉnh/thành phố"}
                                                                 onInputChange={(e) => { console.log(e) }}
+                                                                onChange={(e) => {
+                                                                    setProvinceFromValue(e);
+                                                                }}
                                                                 options={[
                                                                     {
-                                                                        value: "",
-                                                                        label: "Single Option",
-                                                                        isDisabled: true,
+                                                                        value: "0",
+                                                                        label: "TP.Hà Nội",
                                                                     },
-                                                                    { value: "2", label: "Foobar" },
-                                                                    { value: "3", label: "Is great" },
                                                                 ]}
                                                             ></Select>
                                                         </div>
@@ -117,20 +325,16 @@ function HomePage() {
                                                         <div className=" col-md-9">
                                                             <Select
                                                                 className="react-select react-select-info mt-2 rounded-0"
-                                                                onChange={(value) => { }}
                                                                 classNamePrefix="react-select"
-                                                                placeholder="Single Select"
-                                                                value={{ label: "", value: "" }}
-                                                                name=""
                                                                 onInputChange={(e) => { console.log(e) }}
+                                                                placeholder={"Chọn quận/ huyện"}
+                                                                value={districFromValue}
+                                                                onChange={(e) => {
+                                                                    setDistrictFromValue(e);
+                                                                }}
                                                                 options={[
-                                                                    {
-                                                                        value: "",
-                                                                        label: "Single Option",
-                                                                        isDisabled: true,
-                                                                    },
-                                                                    { value: "2", label: "Foobar" },
-                                                                    { value: "3", label: "Is great" },
+                                                                    { value: "2", label: "Quận Hai Bà Trưng" },
+                                                                    { value: "3", label: "Quận Nam Từ Liêm" },
                                                                 ]}
                                                             ></Select>
                                                         </div>
@@ -140,20 +344,15 @@ function HomePage() {
                                                         <div className=" col-md-9">
                                                             <Select
                                                                 className="react-select react-select-info mt-2 rounded-0"
-                                                                onChange={(value) => { }}
                                                                 classNamePrefix="react-select"
-                                                                placeholder="Single Select"
-                                                                value={{ label: "", value: "" }}
-                                                                name=""
+                                                                placeholder={"Chọn tỉnh/thành phố"}
+                                                                value={provinceToValue}
+                                                                onChange={(e) => {
+                                                                    setProvinceToValue(e);
+                                                                }}
                                                                 onInputChange={(e) => { console.log(e) }}
                                                                 options={[
-                                                                    {
-                                                                        value: "",
-                                                                        label: "Single Option",
-                                                                        isDisabled: true,
-                                                                    },
-                                                                    { value: "2", label: "Foobar" },
-                                                                    { value: "3", label: "Is great" },
+                                                                    { value: "2", label: "Ninh Bình" },
                                                                 ]}
                                                             ></Select>
                                                         </div>
@@ -163,41 +362,53 @@ function HomePage() {
                                                         <div className=" col-md-9">
                                                             <Select
                                                                 className="react-select react-select-info mt-2 rounded-0"
-                                                                onChange={(value) => { }}
                                                                 classNamePrefix="react-select"
-                                                                placeholder="Single Select"
-                                                                value={{ label: "", value: "" }}
-                                                                name=""
+                                                                value={districToValue}
+                                                                placeholder={"Chọn quận/huyện"}
+                                                                onChange={(e) => {
+                                                                    setDistrictToValue(e);
+                                                                }}
                                                                 onInputChange={(e) => { console.log(e) }}
                                                                 options={[
-                                                                    {
-                                                                        value: "",
-                                                                        label: "Single Option",
-                                                                        isDisabled: true,
-                                                                    },
-                                                                    { value: "2", label: "Foobar" },
-                                                                    { value: "3", label: "Is great" },
+                                                                    { value: "2", label: "Yên Khánh" },
                                                                 ]}
                                                             ></Select>
                                                         </div>
                                                     </div>
                                                     <InputCustom
-                                                        title="Trọng lượng"
+                                                        title="Trọng lượng (Gram)"
                                                         type="number"
+                                                        placeholder="Nhập trọng lượng(Gram) = Dài * Rộng * Cao / 5000"
                                                         wrapInputClassName={"col-md-9"}
                                                         labelClassName={"col-md-3"}
                                                     />
                                                     <InputCustom
-                                                        title="Số tiền thu hộ"
+                                                        title="Số tiền thu hộ (VND)"
                                                         type="number"
+                                                        placeholder={"Nhập số tiền thu hộ"}
                                                         wrapInputClassName={"col-md-9 mt-2"}
                                                         labelClassName={"col-md-3"}
                                                     />
+                                                    {/* <div>
+                                                        <span style={{
+                                                            fontStyle: 'italic',
+                                                            color: 'red'
+                                                        }} >*Lưu ý: Hiện tại chúng tôi chỉ cung cấp dịch vụ chuyển phát tiết kiệm</span>
+                                                        <h5 style={{
+                                                            fontWeight: 'bold',
+                                                            color: 'red'
+                                                        }}>Số tiền cước phí: 42000 (VND) </h5>
+                                                    </div> */}
                                                     <Button type="submit" style={{
                                                         backgroundColor: 'green',
                                                         color: 'white',
-                                                        width: 200
-                                                    }} >Tra cứu</Button>
+                                                        width: 250,
+                                                        display: 'flex',
+                                                        justifyContent: "center"
+                                                    }} className="text-icon btn-lg" >
+                                                        <i class="now-ui-icons ui-1_zoom-bold"></i>
+                                                        <h6 className="mb-0">Tra cứu</h6>
+                                                    </Button>
                                                 </form>
                                             </Col>
                                             <Col md={6}>
@@ -214,7 +425,11 @@ function HomePage() {
                                         <Row className="mb-3">
                                             <Col md={12}>
                                                 <SelectCustom
-
+                                                    type={"search"}
+                                                    value={{
+                                                        label: 'Hà Nội',
+                                                        value: '0'
+                                                    }}
                                                 />
                                             </Col>
                                         </Row>
@@ -226,10 +441,18 @@ function HomePage() {
                                                 <div className="mb-2 pb-2" style={{
                                                     borderBottom: '1px solid #ccc'
                                                 }}>
-                                                    <h5 className="font-weight-bold mb-1"> Bưu cục đào tạo Hà Nội</h5>
-                                                    <div> <i className="now-ui-icons location_pin mr-1"></i>Số 12 BT4 - 1 Vinaconext 3 Trung Văn</div>
-                                                    <div> <i className="now-ui-icons tech_mobile mr-1"></i>Phone: 84981222268</div>
-                                                    <div className="text-uppercase" > <i className="now-ui-icons shopping_tag-content mr-1"></i>Q.NAM TỪ LIÊM,TP.HÀ NỘI</div>
+                                                    <h5 className="font-weight-bold mb-1"> Bưu cục Mỗ Lao - HNI</h5>
+                                                    <div> <i className="now-ui-icons location_pin mr-1"></i>SỐ 12LK6B C17 BỘ CÔNG AN, PHƯỜNG MỖ LAO</div>
+                                                    <div> <i className="now-ui-icons tech_mobile mr-1"></i>Phone: 84334373639</div>
+                                                    <div className="text-uppercase" > <i className="now-ui-icons shopping_tag-content mr-1"></i>Q.HÀ ĐÔNG,TP.HÀ NỘI</div>
+                                                </div>
+                                                <div className="mb-2 pb-2" style={{
+                                                    borderBottom: '1px solid #ccc'
+                                                }}>
+                                                    <h5 className="font-weight-bold mb-1"> Bưu cục Phú La - HNI</h5>
+                                                    <div> <i className="now-ui-icons location_pin mr-1"></i>101 Lacasta Văn Phú, Hà Đông Duyệt Hoàn Gọi 02463261999 , CSKH Ngân 0986316836</div>
+                                                    <div> <i className="now-ui-icons tech_mobile mr-1"></i>Phone: 84981003232</div>
+                                                    <div className="text-uppercase" > <i className="now-ui-icons shopping_tag-content mr-1"></i>Q.HÀ ĐÔNG,TP.HÀ NỘI</div>
                                                 </div>
                                                 <div className="mb-2 pb-2" style={{
                                                     borderBottom: '1px solid #ccc'
@@ -242,26 +465,18 @@ function HomePage() {
                                                 <div className="mb-2 pb-2" style={{
                                                     borderBottom: '1px solid #ccc'
                                                 }}>
-                                                    <h5 className="font-weight-bold mb-1"> Bưu cục đào tạo Hà Nội</h5>
-                                                    <div> <i className="now-ui-icons location_pin mr-1"></i>Số 12 BT4 - 1 Vinaconext 3 Trung Văn</div>
-                                                    <div> <i className="now-ui-icons tech_mobile mr-1"></i>Phone: 84981222268</div>
-                                                    <div className="text-uppercase" > <i className="now-ui-icons shopping_tag-content mr-1"></i>Q.NAM TỪ LIÊM,TP.HÀ NỘI</div>
+                                                    <h5 className="font-weight-bold mb-1"> Bưu cục Văn Quán - HNI</h5>
+                                                    <div> <i className="now-ui-icons location_pin mr-1"></i>SỐ 190 ĐƯỜNG CHIẾN THẮNG,PHƯỜNG VĂN QUÁN,QUẬN HÀ ĐÔNG,THÀNH PHỐ HÀ NỘI</div>
+                                                    <div> <i className="now-ui-icons tech_mobile mr-1"></i>Phone: 84972066102</div>
+                                                    <div className="text-uppercase" > <i className="now-ui-icons shopping_tag-content mr-1"></i>Q.HÀ ĐÔNG,TP.HÀ NỘI</div>
                                                 </div>
                                                 <div className="mb-2 pb-2" style={{
                                                     borderBottom: '1px solid #ccc'
                                                 }}>
-                                                    <h5 className="font-weight-bold mb-1"> Bưu cục đào tạo Hà Nội</h5>
-                                                    <div> <i className="now-ui-icons location_pin mr-1"></i>Số 12 BT4 - 1 Vinaconext 3 Trung Văn</div>
-                                                    <div> <i className="now-ui-icons tech_mobile mr-1"></i>Phone: 84981222268</div>
-                                                    <div className="text-uppercase" > <i className="now-ui-icons shopping_tag-content mr-1"></i>Q.NAM TỪ LIÊM,TP.HÀ NỘI</div>
-                                                </div>
-                                                <div className="mb-2 pb-2" style={{
-                                                    borderBottom: '1px solid #ccc'
-                                                }}>
-                                                    <h5 className="font-weight-bold mb-1"> Bưu cục đào tạo Hà Nội</h5>
-                                                    <div> <i className="now-ui-icons location_pin mr-1"></i>Số 12 BT4 - 1 Vinaconext 3 Trung Văn</div>
-                                                    <div> <i className="now-ui-icons tech_mobile mr-1"></i>Phone: 84981222268</div>
-                                                    <div className="text-uppercase" > <i className="now-ui-icons shopping_tag-content mr-1"></i>Q.NAM TỪ LIÊM,TP.HÀ NỘI</div>
+                                                    <h5 className="font-weight-bold mb-1"> Bưu cục Phúc La - HNI</h5>
+                                                    <div> <i className="now-ui-icons location_pin mr-1"></i>Số LK-VT4, Dự Án Tổ Hợp Chung Cư Bemes Sau CT6 Xa La</div>
+                                                    <div> <i className="now-ui-icons tech_mobile mr-1"></i>Phone: 19008095</div>
+                                                    <div className="text-uppercase" > <i className="now-ui-icons shopping_tag-content mr-1"></i>Q.HÀ ĐÔNG,TP.HÀ NỘI</div>
                                                 </div>
                                                 <div className="mb-2 pb-2" style={{
                                                     borderBottom: '1px solid #ccc'

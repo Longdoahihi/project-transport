@@ -59,7 +59,9 @@ function CustomFooter() {
                                         <a
                                             className="text-muted"
                                             href="#pablo"
-                                            onClick={(e) => e.preventDefault()}
+                                            onClick={(e) => {
+                                                window.alert("Thông tin tài khoản hoặc mật khẩu không chính xác!")
+                                            }}
                                         >
                                             Đăng nhập
                                         </a>

@@ -24,45 +24,7 @@ import 'assets/css/pages/home-page/index.css'
 import IntroHeader from "components/Headers/IntroduceHeader";
 import NewsHeader from "components/Headers/NewsHeader";
 import CustomFooter from "components/CustomFooter";
-const items = [
-    {
-        src: require("assets/img/bg1.jpg"),
-        altText: "",
-        caption: "Nature, United States"
-    },
-    {
-        src: require("assets/img/bg3.jpg"),
-        altText: "",
-        caption: "Somewhere Beyond, United States"
-    },
-    {
-        src: require("assets/img/bg4.jpg"),
-        altText: "",
-        caption: "Yellowstone National Park, United States"
-    }]
 function NewsPage() {
-    const [activeIndex, setActiveIndex] = React.useState(0);
-    const [animating, setAnimating] = React.useState(false);
-    const onExiting = () => {
-        setAnimating(true);
-    };
-    const onExited = () => {
-        setAnimating(false);
-    };
-    const next = () => {
-        if (animating) return;
-        const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-        setActiveIndex(nextIndex);
-    };
-    const previous = () => {
-        if (animating) return;
-        const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-        setActiveIndex(nextIndex);
-    };
-    const goToIndex = (newIndex) => {
-        if (animating) return;
-        setActiveIndex(newIndex);
-    };
     return (
         <>
             <ScrollTransparentNavbar isOpenNavbar={true} />

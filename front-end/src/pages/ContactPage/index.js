@@ -28,7 +28,7 @@ const MapWrapper = () => {
         let map = mapRef.current;
         let lat = "40.748817";
         let lng = "-73.985428";
-        const myLatlng =!!google?.maps ? new google.maps.LatLng(lat, lng): "";
+        const myLatlng = !!google?.maps ? new google.maps.LatLng(lat, lng) : "";
         const mapOptions = {
             zoom: 13,
             center: myLatlng,
@@ -237,6 +237,9 @@ function ContactPage() {
                                                 color="info"
                                                 defaultValue="Contact Us"
                                                 type="submit"
+                                                onClick={() => {
+                                                    window.alert("Cảm ơn phản hồi của bạn về chúng tôi! Chúng tôi sẽ liên hệ với bạn ngay khi có thể!")
+                                                }}
                                             >
                                                 Gửi
                                             </Button>

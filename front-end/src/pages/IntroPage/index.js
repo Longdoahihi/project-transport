@@ -29,56 +29,12 @@ import {
 import Select from 'react-select'
 
 // core components
-import FooterBlack from "components/Footers/FooterBlack.js";
-import HomeHeader from "components/Headers/HomeHeader";
 import ScrollTransparentNavbar from "components/Navbars/ScrollTransparentNavbar";
 import 'assets/css/pages/home-page/index.css'
-import classNames from "classnames";
-import InputCustom from "components/InputCustom";
-import SelectCustom from "components/SelectCustom";
 import IntroHeader from "components/Headers/IntroduceHeader";
-import Testimonials from "views/presentation-sections/Testimonials";
-import CarouselSection from "views/index-sections/Carousel";
 import CustomFooter from "components/CustomFooter";
-const items = [
-    {
-        src: require("assets/img/bg1.jpg"),
-        altText: "",
-        caption: "Nature, United States"
-    },
-    {
-        src: require("assets/img/bg3.jpg"),
-        altText: "",
-        caption: "Somewhere Beyond, United States"
-    },
-    {
-        src: require("assets/img/bg4.jpg"),
-        altText: "",
-        caption: "Yellowstone National Park, United States"
-    }]
+
 function IntroPage() {
-    const [activeIndex, setActiveIndex] = React.useState(0);
-    const [animating, setAnimating] = React.useState(false);
-    const onExiting = () => {
-        setAnimating(true);
-    };
-    const onExited = () => {
-        setAnimating(false);
-    };
-    const next = () => {
-        if (animating) return;
-        const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-        setActiveIndex(nextIndex);
-    };
-    const previous = () => {
-        if (animating) return;
-        const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-        setActiveIndex(nextIndex);
-    };
-    const goToIndex = (newIndex) => {
-        if (animating) return;
-        setActiveIndex(newIndex);
-    };
     return (
         <>
             <ScrollTransparentNavbar />

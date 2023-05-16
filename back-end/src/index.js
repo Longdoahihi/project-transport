@@ -1,3 +1,4 @@
+
 const path = require('path')
 const express = require('express');
 const { engine } = require('express-handlebars');
@@ -6,6 +7,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 app.use(cors());
+//config env
+require('dotenv').config();
 // Configuring body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -24,6 +27,4 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 //config routes
 route(app);
-
-
 app.listen(8888);
